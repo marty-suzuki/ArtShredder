@@ -59,11 +59,6 @@ final class ViewController: UIViewController {
         present(picker, animated: true, completion: nil)
     }
 
-    @IBAction private func openURL(_ sender: UIButton) {
-        let url = URL(string: "https://www.freeiconspng.com/img/24597")!
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
-
     @IBAction private func saveImage(_ sender: UIButton) {
         defer {
             saveImageButton.isHidden = false

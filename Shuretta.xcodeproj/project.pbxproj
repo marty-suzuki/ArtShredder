@@ -14,6 +14,7 @@
 		375D3019216D15D800D5B953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375D3017216D15D800D5B953 /* LaunchScreen.storyboard */; };
 		3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D608216FC61E003909BE /* AdMobConfig.swift */; };
 		3771D60D216FC711003909BE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
+		3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D610216FCBF7003909BE /* SettingViewController.swift */; };
 		7861C119923D0FE9E49C5C85 /* Pods_Shuretta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA1FBADD1E3C9EA2FA09CC6 /* Pods_Shuretta.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		375D301A216D15D800D5B953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3771D608216FC61E003909BE /* AdMobConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobConfig.swift; sourceTree = "<group>"; };
 		3771D60C216FC711003909BE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		3771D610216FCBF7003909BE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.debug.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.debug.xcconfig"; sourceTree = "<group>"; };
 		EAA1FBADD1E3C9EA2FA09CC6 /* Pods_Shuretta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuretta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				375D301A216D15D800D5B953 /* Info.plist */,
 				3771D608216FC61E003909BE /* AdMobConfig.swift */,
 				3771D60C216FC711003909BE /* Secret.swift */,
+				3771D610216FCBF7003909BE /* SettingViewController.swift */,
 			);
 			path = Shuretta;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */,
 				375D3011216D15D700D5B953 /* ViewController.swift in Sources */,
 				3771D60D216FC711003909BE /* Secret.swift in Sources */,
 				3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */,

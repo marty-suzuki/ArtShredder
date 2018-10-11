@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import MobileCoreServices
 
 final class ViewController: UIViewController {
 
@@ -15,6 +16,11 @@ final class ViewController: UIViewController {
     @IBOutlet private(set) weak var saveImageButton: UIButton! {
         didSet {
             saveImageButton.isEnabled = false
+        }
+    }
+    @IBOutlet private(set) weak var saveGifButton: UIButton! {
+        didSet {
+            saveGifButton.isEnabled = false
         }
     }
     @IBOutlet private(set) weak var bottomView: UIView!
@@ -27,6 +33,9 @@ final class ViewController: UIViewController {
             linkButtonCoutainer.layer.masksToBounds = true
         }
     }
+
+    private var timer: Timer?
+    private var images: [UIImage] = []
 
     @IBAction private func selectPicture(_ sender: UIButton) {
         let picker = UIImagePickerController()
@@ -47,17 +56,9 @@ final class ViewController: UIViewController {
         saveImageButton.isHidden = true
         pictureSelectButton.isHidden = true
 
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            UIGraphicsEndImageContext()
+        guard let image = snapshot() else {
             return
         }
-        view.layer.render(in: context)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
-            UIGraphicsEndImageContext()
-            return
-        }
-        UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
@@ -70,6 +71,57 @@ final class ViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+
+    private func snapshot(size: CGSize? = nil, scale: CGFloat = 0.0) -> UIImage? {
+        let _size = size ?? view.bounds.size
+        let _rect = size.map { CGRect(x: 0, y: 0, width: $0.width, height: $0.height) } ?? view.bounds
+
+        UIGraphicsBeginImageContextWithOptions(_size, false, scale)
+        view.drawHierarchy(in: _rect, afterScreenUpdates: false)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            UIGraphicsEndImageContext()
+            return nil
+        }
+        UIGraphicsEndImageContext()
+        return image
+    }
+
+    @objc private func timerHandler(_ timer: Timer) {
+        DispatchQueue.main.async {
+            let size = self.view.bounds.size
+            guard let image = self.snapshot(size: CGSize(width: size.width / 2, height: size.height / 2), scale: 1.0) else {
+                return
+            }
+            self.images += [image]
+        }
+    }
+
+    @IBAction func saveGif(_ sender: UIButton) {
+        let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("sample.gif")!
+        guard let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeGIF, images.count, nil) else {
+            print("CGImageDestinationの作成に失敗")
+            return
+        }
+
+        let properties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: 0]]
+        CGImageDestinationSetProperties(destination, properties as CFDictionary)
+
+        let frameProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFDelayTime as String: 0.2]]
+        for image in images {
+            if let cgImage = image.cgImage {
+                CGImageDestinationAddImage(destination, cgImage, frameProperties as CFDictionary)
+            }
+        }
+
+        if CGImageDestinationFinalize(destination) {
+            print("GIF生成が成功")
+        } else {
+            print("GIF生成に失敗")
+        }
+
+        let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        present(controller, animated: true, completion: nil)
+    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -78,16 +130,27 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         imageViewCenterYConstraint.constant = 0
         pictureSelectButton.isEnabled = false
         saveImageButton.isEnabled = false
+        saveGifButton.isEnabled = false
 
         dismiss(animated: true) { [weak self] in
             guard let me = self else { return }
+
             me.containerView.layoutIfNeeded()
             me.imageViewCenterYConstraint.constant = me.bottomView.frame.size.height
+
+            me.images.removeAll()
+            me.timer = Timer.scheduledTimer(timeInterval: 0.05, target: me, selector: #selector(me.timerHandler(_:)), userInfo: nil, repeats: true)
+
             UIView.animate(withDuration: 5, delay: 2, options: .curveEaseInOut, animations: {
                 me.containerView.layoutIfNeeded()
             }) { _ in
-                me.pictureSelectButton.isEnabled = true
-                me.saveImageButton.isEnabled = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                    me.timer?.invalidate()
+                    me.timer = nil
+                    me.pictureSelectButton.isEnabled = true
+                    me.saveImageButton.isEnabled = true
+                    me.saveGifButton.isEnabled = true
+                }
             }
         }
     }

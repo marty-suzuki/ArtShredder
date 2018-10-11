@@ -87,10 +87,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="197.33333333333334"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whA-by-pPt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="197.33333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="18.333333333333332" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-Tb-r2d">
-                                                                <rect key="frame" x="15.666666666666664" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333336" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="IKG-hY-5LN"/>
@@ -106,10 +106,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSe-xv-qmt">
-                                                        <rect key="frame" x="19.666666666666664" y="0.0" width="19.666666666666664" height="197.33333333333334"/>
+                                                        <rect key="frame" x="18.333333333333336" y="0.0" width="18.666666666666664" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtU-Zj-7pV">
-                                                                <rect key="frame" x="15.666666666666664" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.666666666666664" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="K5k-lx-1iY"/>
@@ -125,10 +125,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nb-ea-5TQ">
-                                                        <rect key="frame" x="39.333333333333329" y="0.0" width="19.666666666666671" height="197.33333333333334"/>
+                                                        <rect key="frame" x="37" y="0.0" width="18.333333333333329" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-Ze-GAV">
-                                                                <rect key="frame" x="15.666666666666671" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333329" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="y08-hr-ged"/>
@@ -144,10 +144,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gco-jM-nFS">
-                                                        <rect key="frame" x="58.999999999999993" y="0.0" width="19.666666666666664" height="197.33333333333334"/>
+                                                        <rect key="frame" x="55.333333333333336" y="0.0" width="18.333333333333336" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNM-Cg-apD">
-                                                                <rect key="frame" x="15.666666666666671" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="ryW-74-sdB"/>
@@ -163,10 +163,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzp-0O-Aik">
-                                                        <rect key="frame" x="78.666666666666671" y="0.0" width="19.666666666666671" height="197.33333333333334"/>
+                                                        <rect key="frame" x="73.666666666666671" y="0.0" width="18.666666666666671" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chX-T6-Hsz">
-                                                                <rect key="frame" x="15.666666666666671" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.666666666666671" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="0Nc-dm-6UJ"/>
@@ -182,10 +182,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1JQ-nD-8ja">
-                                                        <rect key="frame" x="98.333333333333343" y="0.0" width="19.666666666666671" height="197.33333333333334"/>
+                                                        <rect key="frame" x="92.333333333333343" y="0.0" width="18.333333333333329" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH9-cf-0ZY">
-                                                                <rect key="frame" x="15.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333314" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="bXX-ap-k0q"/>
@@ -201,10 +201,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqu-Bu-iyA">
-                                                        <rect key="frame" x="118" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="110.66666666666666" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXH-lg-YA0">
-                                                                <rect key="frame" x="15.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="f2o-tl-8HN"/>
@@ -220,10 +220,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-8O-Mhs">
-                                                        <rect key="frame" x="137.66666666666666" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="129" y="0.0" width="18.666666666666657" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTQ-cw-n6j">
-                                                                <rect key="frame" x="15.666666666666686" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="3uf-kf-jjc"/>
@@ -239,10 +239,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89r-7y-kYM">
-                                                        <rect key="frame" x="157.33333333333334" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="147.66666666666666" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YD-3c-xL2">
-                                                                <rect key="frame" x="15.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="B4B-ap-9HP"/>
@@ -258,10 +258,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-Ov-3UB">
-                                                        <rect key="frame" x="177" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="166" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHM-NQ-Oh0">
-                                                                <rect key="frame" x="15.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="SrF-FU-Sec"/>
@@ -277,10 +277,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaq-7i-boK">
-                                                        <rect key="frame" x="196.66666666666666" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="184.33333333333334" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chb-lz-xYC">
-                                                                <rect key="frame" x="15.666666666666686" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333314" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="u4h-Rm-dkC"/>
@@ -296,10 +296,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxd-Ku-iyO">
-                                                        <rect key="frame" x="216.33333333333331" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="202.66666666666666" y="0.0" width="18.666666666666657" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGC-6T-XyV">
-                                                                <rect key="frame" x="15.666666666666686" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="dR9-hq-0Ix"/>
@@ -315,10 +315,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-nY-aLp">
-                                                        <rect key="frame" x="236" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="221.33333333333331" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3B-Le-AsE">
-                                                                <rect key="frame" x="15.666666666666686" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333371" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="lcp-HL-CiF"/>
@@ -334,10 +334,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-8g-L2z">
-                                                        <rect key="frame" x="255.66666666666666" y="0.0" width="19.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="239.66666666666669" y="0.0" width="18.333333333333314" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN5-tg-qki">
-                                                                <rect key="frame" x="15.666666666666629" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.333333333333314" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="4ei-v8-r0m"/>
@@ -353,10 +353,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h01-t7-H7E">
-                                                        <rect key="frame" x="275.33333333333331" y="0.0" width="19.666666666666686" height="197.33333333333334"/>
+                                                        <rect key="frame" x="258" y="0.0" width="18.666666666666686" height="197.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-zI-IKw">
-                                                                <rect key="frame" x="15.666666666666686" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="14.666666666666686" y="0.0" width="4" height="197.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="Slw-rc-jT7"/>
@@ -370,6 +370,10 @@
                                                             <constraint firstAttribute="bottom" secondItem="jgW-zI-IKw" secondAttribute="bottom" id="kQA-Iq-nB3"/>
                                                             <constraint firstItem="jgW-zI-IKw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h01-t7-H7E" secondAttribute="leading" id="lMq-fc-N07"/>
                                                         </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-ic-UXC">
+                                                        <rect key="frame" x="276.66666666666669" y="0.0" width="18.333333333333314" height="197.33333333333334"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -427,6 +431,14 @@
                                     <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPP-sR-jPE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-o2-n9l">
+                                <rect key="frame" x="251" y="156.66666666666666" width="84" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save as GIF"/>
+                                <connections>
+                                    <action selector="saveGif:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lD2-Ee-aeB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
@@ -443,6 +455,8 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                             </constraint>
                             <constraint firstItem="6y6-Gn-9Ai" firstAttribute="top" secondItem="ywI-ng-slk" secondAttribute="bottom" id="LSC-J6-Hfl"/>
+                            <constraint firstItem="Zzt-vR-wd2" firstAttribute="trailing" secondItem="pmm-o2-n9l" secondAttribute="trailing" id="Wjg-PV-OO9"/>
+                            <constraint firstItem="Zzt-vR-wd2" firstAttribute="top" secondItem="pmm-o2-n9l" secondAttribute="bottom" constant="8" id="ZQT-gz-6vH"/>
                             <constraint firstItem="bi2-GI-78v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="giJ-vk-y3f"/>
                             <constraint firstItem="6y6-Gn-9Ai" firstAttribute="trailing" secondItem="ywI-ng-slk" secondAttribute="trailing" id="mVW-Jp-TlH"/>
                             <constraint firstItem="Zzt-vR-wd2" firstAttribute="trailing" secondItem="ywI-ng-slk" secondAttribute="trailing" id="x3F-H7-c4d"/>
@@ -456,6 +470,7 @@
                         <outlet property="imageViewCenterYConstraint" destination="3bD-eC-Wyd" id="89N-AS-024"/>
                         <outlet property="linkButtonCoutainer" destination="bi2-GI-78v" id="Zft-33-SRZ"/>
                         <outlet property="pictureSelectButton" destination="cyG-mL-vs9" id="uCM-KI-XQL"/>
+                        <outlet property="saveGifButton" destination="pmm-o2-n9l" id="eOC-go-Rn7"/>
                         <outlet property="saveImageButton" destination="Zzt-vR-wd2" id="ehj-z0-QZP"/>
                     </connections>
                 </viewController>

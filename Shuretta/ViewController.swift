@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import MobileCoreServices
+import GoogleMobileAds
 
 final class ViewController: UIViewController {
 
@@ -36,6 +37,21 @@ final class ViewController: UIViewController {
 
     private var timer: Timer?
     private var images: [UIImage] = []
+
+    private lazy var interstitial = createAndLoadInterstitial()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        _ = interstitial
+    }
+
+    private func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: AdMobConfig.make().interstitialTestAdID)
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
 
     @IBAction private func selectPicture(_ sender: UIButton) {
         let picker = UIImagePickerController()
@@ -97,6 +113,14 @@ final class ViewController: UIViewController {
     }
 
     @IBAction func saveGif(_ sender: UIButton) {
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            interstitial = createAndLoadInterstitial()
+        }
+    }
+
+    private func createGIF() {
         let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("sample.gif")!
         guard let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeGIF, images.count, nil) else {
             print("CGImageDestinationの作成に失敗")
@@ -153,5 +177,40 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                 }
             }
         }
+    }
+}
+
+extension ViewController: GADInterstitialDelegate {
+    /// Tells the delegate an ad request succeeded.
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        print("interstitialDidReceiveAd")
+    }
+
+    /// Tells the delegate an ad request failed.
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    /// Tells the delegate that an interstitial will be presented.
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        print("interstitialWillPresentScreen")
+    }
+
+    /// Tells the delegate the interstitial is to be animated off the screen.
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialWillDismissScreen")
+    }
+
+    /// Tells the delegate the interstitial had been animated off the screen.
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialDidDismissScreen")
+        interstitial = createAndLoadInterstitial()
+        createGIF()
+    }
+
+    /// Tells the delegate that a user click will open another app
+    /// (such as the App Store), backgrounding the current app.
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        print("interstitialWillLeaveApplication")
     }
 }

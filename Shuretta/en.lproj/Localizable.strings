@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Shuretta
+
+  Created by marty-suzuki on 2018/10/14.
+  Copyright © 2018年 marty-suzuki. All rights reserved.
+*/
+
+"frame_description" = "This photo frame is provided by %@";
+"select_image_name" = "add_image_en";
+"save_gif_button" = "Save as GIF";
+"save_image_button" = "Save as Image";
+"did_save_to_camera_roll_title" = "Save Image Finished";
+"did_save_to_camera_roll_message" = "Finished saving Image to Camera Roll!";
+"close_action" = "Close";

@@ -15,6 +15,7 @@
 		3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D608216FC61E003909BE /* AdMobConfig.swift */; };
 		3771D60D216FC711003909BE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
 		3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D610216FCBF7003909BE /* SettingViewController.swift */; };
+		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
 		7861C119923D0FE9E49C5C85 /* Pods_Shuretta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA1FBADD1E3C9EA2FA09CC6 /* Pods_Shuretta.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		3771D608216FC61E003909BE /* AdMobConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobConfig.swift; sourceTree = "<group>"; };
 		3771D60C216FC711003909BE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		3771D610216FCBF7003909BE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		37A069A32172F1F40083873F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37A069A52172F2110083873F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.debug.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.debug.xcconfig"; sourceTree = "<group>"; };
 		EAA1FBADD1E3C9EA2FA09CC6 /* Pods_Shuretta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuretta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +96,7 @@
 				3771D608216FC61E003909BE /* AdMobConfig.swift */,
 				3771D60C216FC711003909BE /* Secret.swift */,
 				3771D610216FCBF7003909BE /* SettingViewController.swift */,
+				37A069A42172F1F40083873F /* Localizable.strings */,
 			);
 			path = Shuretta;
 			sourceTree = "<group>";
@@ -140,6 +144,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 375D3002216D15D700D5B953;
 			productRefGroup = 375D300C216D15D700D5B953 /* Products */;
@@ -157,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				375D3019216D15D800D5B953 /* LaunchScreen.storyboard in Resources */,
+				37A069A22172F1F40083873F /* Localizable.strings in Resources */,
 				375D3016216D15D800D5B953 /* Assets.xcassets in Resources */,
 				375D3014216D15D700D5B953 /* Main.storyboard in Resources */,
 			);
@@ -221,6 +227,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		37A069A42172F1F40083873F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37A069A32172F1F40083873F /* en */,
+				37A069A52172F2110083873F /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -228,6 +243,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -289,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

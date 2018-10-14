@@ -9,5 +9,4 @@
 struct AdMobConfig {
     let appID: String
     let interstitialAdID: String
-    let interstitialTestAdID: String
 }

@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "This photo frame is provided by https://www.freeiconspng.com/img/24597"; ObjectID = "HGE-mM-gMD"; */
+"HGE-mM-gMD.text" = "";
+
+/* Class = "UILabel"; text = "Version: v1.0"; ObjectID = "Qy3-4K-zsf"; */
+"Qy3-4K-zsf.text" = "Version: v1.0";
+
+/* Class = "UIButton"; normalTitle = "Save as Image"; ObjectID = "Zzt-vR-wd2"; */
+"Zzt-vR-wd2.normalTitle" = "画像を保存";
+
+/* Class = "UIButton"; normalTitle = "Select to add Art"; ObjectID = "cyG-mL-vs9"; */
+"cyG-mL-vs9.normalTitle" = "芸術にする画像を選択";
+
+/* Class = "UIButton"; normalTitle = "Save as GIF"; ObjectID = "pmm-o2-n9l"; */
+"pmm-o2-n9l.normalTitle" = "GIFを保存";

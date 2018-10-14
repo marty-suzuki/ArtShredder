@@ -13,15 +13,27 @@ import GoogleMobileAds
 
 final class ViewController: UIViewController {
 
-    @IBOutlet private(set) weak var pictureSelectButton: UIButton!
+    @IBOutlet private(set) weak var selectImageButton: UIButton! {
+        didSet {
+            let imageName = NSLocalizedString("select_image_name", comment: "")
+            guard let image = UIImage(named: imageName) else {
+                return
+            }
+            selectImageButton.setImage(image, for: .normal)
+        }
+    }
     @IBOutlet private(set) weak var saveImageButton: UIButton! {
         didSet {
             saveImageButton.isEnabled = false
+            let title = NSLocalizedString("save_image_button", comment: "")
+            saveImageButton.setTitle(title, for: .normal)
         }
     }
     @IBOutlet private(set) weak var saveGifButton: UIButton! {
         didSet {
             saveGifButton.isEnabled = false
+            let title = NSLocalizedString("save_gif_button", comment: "")
+            saveGifButton.setTitle(title, for: .normal)
         }
     }
     @IBOutlet private(set) weak var bottomView: UIView!
@@ -40,6 +52,10 @@ final class ViewController: UIViewController {
 
     private lazy var interstitial = createAndLoadInterstitial()
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,7 +63,7 @@ final class ViewController: UIViewController {
     }
 
     private func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: AdMobConfig.make().interstitialTestAdID)
+        let interstitial = GADInterstitial(adUnitID: AdMobConfig.make().interstitialAdID)
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
@@ -62,25 +78,36 @@ final class ViewController: UIViewController {
     @IBAction private func saveImage(_ sender: UIButton) {
         defer {
             saveImageButton.isHidden = false
-            pictureSelectButton.isHidden = false
+            selectImageButton.isHidden = false
         }
         saveImageButton.isHidden = true
-        pictureSelectButton.isHidden = true
+        selectImageButton.isHidden = true
 
-        guard let image = snapshot() else {
+        guard let data = snapshot()?.pngData() else {
             return
         }
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+
+        let controller = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+        controller.completionWithItemsHandler = { [weak self] activityType, isCompleted, returnedItems, error in
+            guard isCompleted && activityType == .saveToCameraRoll else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.saveFinishedAlert()
+            }
+        }
+        present(controller, animated: true, completion: nil)
     }
 
-    @objc private func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        let alert = UIAlertController(title: "Save done", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+    private func saveFinishedAlert() {
+        let title = NSLocalizedString("did_save_to_camera_roll_title", comment: "")
+        let message = NSLocalizedString("did_save_to_camera_roll_message", comment: "")
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         present(alert, animated: true, completion: nil)
-    }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            alert.dismiss(animated: true, completion: nil)
+        }
     }
 
     private func snapshot(size: CGSize? = nil, scale: CGFloat = 0.0) -> UIImage? {
@@ -118,7 +145,7 @@ final class ViewController: UIViewController {
     private func createGIF() {
         let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("sample.gif")!
         guard let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeGIF, images.count, nil) else {
-            print("CGImageDestinationの作成に失敗")
+            // CGImageDestinationの作成に失敗
             return
         }
 
@@ -132,13 +159,20 @@ final class ViewController: UIViewController {
             }
         }
 
-        if CGImageDestinationFinalize(destination) {
-            print("GIF生成が成功")
-        } else {
-            print("GIF生成に失敗")
+        guard CGImageDestinationFinalize(destination) else {
+            // GIF生成に失敗
+            return
         }
 
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        controller.completionWithItemsHandler = { [weak self] activityType, isCompleted, returnedItems, error in
+            guard isCompleted && activityType == .saveToCameraRoll else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.saveFinishedAlert()
+            }
+        }
         present(controller, animated: true, completion: nil)
     }
 }
@@ -147,7 +181,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.originalImage] as? UIImage
         imageViewCenterYConstraint.constant = 0
-        pictureSelectButton.isEnabled = false
+        selectImageButton.isEnabled = false
         saveImageButton.isEnabled = false
         saveGifButton.isEnabled = false
 
@@ -166,7 +200,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
                     me.timer?.invalidate()
                     me.timer = nil
-                    me.pictureSelectButton.isEnabled = true
+                    me.selectImageButton.isEnabled = true
                     me.saveImageButton.isEnabled = true
                     me.saveGifButton.isEnabled = true
                 }

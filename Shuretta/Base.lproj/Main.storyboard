@@ -21,11 +21,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywI-ng-slk">
                                 <rect key="frame" x="40" y="231.66666666666663" width="295" height="349"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-mL-vs9">
-                                        <rect key="frame" x="96" y="159.33333333333334" width="103" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Select Picture">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-mL-vs9">
+                                        <rect key="frame" x="57.666666666666686" y="125.33333333333334" width="180" height="98"/>
+                                        <state key="normal" image="add_image_en">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="selectPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQ9-tm-6IY"/>
@@ -378,15 +377,15 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzt-vR-wd2">
-                                <rect key="frame" x="266" y="194.66666666666666" width="69" height="27"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="Save Image"/>
+                                <rect key="frame" x="230" y="191.66666666666666" width="105" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save as Image"/>
                                 <connections>
                                     <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPP-sR-jPE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-o2-n9l">
-                                <rect key="frame" x="251" y="156.66666666666666" width="84" height="30"/>
+                                <rect key="frame" x="251" y="153.66666666666666" width="84" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save as GIF"/>
                                 <connections>
@@ -428,14 +427,14 @@
                         <outlet property="containerView" destination="ywI-ng-slk" id="4XS-3h-9sN"/>
                         <outlet property="imageView" destination="SuU-8c-Bxa" id="bSb-c8-BS9"/>
                         <outlet property="imageViewCenterYConstraint" destination="3bD-eC-Wyd" id="89N-AS-024"/>
-                        <outlet property="pictureSelectButton" destination="cyG-mL-vs9" id="uCM-KI-XQL"/>
                         <outlet property="saveGifButton" destination="pmm-o2-n9l" id="eOC-go-Rn7"/>
                         <outlet property="saveImageButton" destination="Zzt-vR-wd2" id="ehj-z0-QZP"/>
+                        <outlet property="selectImageButton" destination="cyG-mL-vs9" id="jRv-9V-rgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.71875" y="133.0078125"/>
+            <point key="canvasLocation" x="135.19999999999999" y="133.00492610837438"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wkj-mm-zga">
@@ -547,12 +546,15 @@
                         <viewLayoutGuide key="safeArea" id="st6-CK-Duw"/>
                     </view>
                     <navigationItem key="navigationItem" id="orh-Kv-5Oe">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="D1B-HS-vuS">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="D1B-HS-vuS">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="WGN-dI-aF1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="frameDescriptionLabel" destination="HGE-mM-gMD" id="hx4-Nt-x9d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUi-dk-9YZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -560,6 +562,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_image_en" width="180" height="98"/>
         <image name="frame" width="1351" height="1600"/>
     </resources>
 </document>

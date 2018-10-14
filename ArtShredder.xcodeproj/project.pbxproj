@@ -16,12 +16,13 @@
 		3771D60D216FC711003909BE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
 		3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D610216FCBF7003909BE /* SettingViewController.swift */; };
 		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
-		7861C119923D0FE9E49C5C85 /* Pods_Shuretta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA1FBADD1E3C9EA2FA09CC6 /* Pods_Shuretta.framework */; };
+		719AE58EEDEC814482CE58CF /* Pods_ArtShredder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1EF19B87DCFEB853B83C3FB3 /* Pods-Shuretta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.release.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.release.xcconfig"; sourceTree = "<group>"; };
-		375D300B216D15D700D5B953 /* Shuretta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shuretta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtShredder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		375D300B216D15D700D5B953 /* ArtShredder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtShredder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375D300E216D15D700D5B953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		375D3010216D15D700D5B953 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		375D3013216D15D700D5B953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,8 @@
 		37A069A32172F1F40083873F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37A069A52172F2110083873F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.debug.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.debug.xcconfig"; sourceTree = "<group>"; };
+		507343E919352EA6D8DC0C01 /* Pods-ArtShredder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.release.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.release.xcconfig"; sourceTree = "<group>"; };
+		8A7AB8C6A53CB22B19ED19E4 /* Pods-ArtShredder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.debug.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.debug.xcconfig"; sourceTree = "<group>"; };
 		EAA1FBADD1E3C9EA2FA09CC6 /* Pods_Shuretta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shuretta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -42,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7861C119923D0FE9E49C5C85 /* Pods_Shuretta.framework in Frameworks */,
+				719AE58EEDEC814482CE58CF /* Pods_ArtShredder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +57,8 @@
 			children = (
 				50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */,
 				1EF19B87DCFEB853B83C3FB3 /* Pods-Shuretta.release.xcconfig */,
+				8A7AB8C6A53CB22B19ED19E4 /* Pods-ArtShredder.debug.xcconfig */,
+				507343E919352EA6D8DC0C01 /* Pods-ArtShredder.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -62,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				EAA1FBADD1E3C9EA2FA09CC6 /* Pods_Shuretta.framework */,
+				35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -69,7 +75,7 @@
 		375D3002216D15D700D5B953 = {
 			isa = PBXGroup;
 			children = (
-				375D300D216D15D700D5B953 /* Shuretta */,
+				375D300D216D15D700D5B953 /* ArtShredder */,
 				375D300C216D15D700D5B953 /* Products */,
 				1AF63382D1E27FE145A7E48B /* Pods */,
 				1BF0846AD1F6339F217DE70C /* Frameworks */,
@@ -79,12 +85,12 @@
 		375D300C216D15D700D5B953 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				375D300B216D15D700D5B953 /* Shuretta.app */,
+				375D300B216D15D700D5B953 /* ArtShredder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		375D300D216D15D700D5B953 /* Shuretta */ = {
+		375D300D216D15D700D5B953 /* ArtShredder */ = {
 			isa = PBXGroup;
 			children = (
 				375D300E216D15D700D5B953 /* AppDelegate.swift */,
@@ -98,15 +104,15 @@
 				3771D610216FCBF7003909BE /* SettingViewController.swift */,
 				37A069A42172F1F40083873F /* Localizable.strings */,
 			);
-			path = Shuretta;
+			path = ArtShredder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		375D300A216D15D700D5B953 /* Shuretta */ = {
+		375D300A216D15D700D5B953 /* ArtShredder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 375D301D216D15D800D5B953 /* Build configuration list for PBXNativeTarget "Shuretta" */;
+			buildConfigurationList = 375D301D216D15D800D5B953 /* Build configuration list for PBXNativeTarget "ArtShredder" */;
 			buildPhases = (
 				F33D5ABB3B5FEF8EE47FEDB6 /* [CP] Check Pods Manifest.lock */,
 				375D3007216D15D700D5B953 /* Sources */,
@@ -117,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = Shuretta;
+			name = ArtShredder;
 			productName = Shuretta;
-			productReference = 375D300B216D15D700D5B953 /* Shuretta.app */;
+			productReference = 375D300B216D15D700D5B953 /* ArtShredder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 375D3006216D15D700D5B953 /* Build configuration list for PBXProject "Shuretta" */;
+			buildConfigurationList = 375D3006216D15D700D5B953 /* Build configuration list for PBXProject "ArtShredder" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +157,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				375D300A216D15D700D5B953 /* Shuretta */,
+				375D300A216D15D700D5B953 /* ArtShredder */,
 			);
 		};
 /* End PBXProject section */
@@ -186,7 +192,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Shuretta-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ArtShredder-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -359,12 +365,12 @@
 		};
 		375D301E216D15D800D5B953 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */;
+			baseConfigurationReference = 8A7AB8C6A53CB22B19ED19E4 /* Pods-ArtShredder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WYW9G5NXR;
-				INFOPLIST_FILE = Shuretta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,12 +385,12 @@
 		};
 		375D301F216D15D800D5B953 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EF19B87DCFEB853B83C3FB3 /* Pods-Shuretta.release.xcconfig */;
+			baseConfigurationReference = 507343E919352EA6D8DC0C01 /* Pods-ArtShredder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WYW9G5NXR;
-				INFOPLIST_FILE = Shuretta/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -400,7 +406,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		375D3006216D15D700D5B953 /* Build configuration list for PBXProject "Shuretta" */ = {
+		375D3006216D15D700D5B953 /* Build configuration list for PBXProject "ArtShredder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				375D301B216D15D800D5B953 /* Debug */,
@@ -409,7 +415,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		375D301D216D15D800D5B953 /* Build configuration list for PBXNativeTarget "Shuretta" */ = {
+		375D301D216D15D800D5B953 /* Build configuration list for PBXNativeTarget "ArtShredder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				375D301E216D15D800D5B953 /* Debug */,

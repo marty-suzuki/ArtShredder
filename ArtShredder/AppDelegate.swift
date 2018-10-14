@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Shuretta
+//  ArtShredder
 //
 //  Created by marty-suzuki on 2018/10/10.
 //  Copyright © 2018年 marty-suzuki. All rights reserved.

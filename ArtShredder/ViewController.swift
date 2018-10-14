@@ -101,7 +101,35 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func selectPicture(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let title = NSLocalizedString("image_source_select_title", comment: "")
+            let message = NSLocalizedString("image_source_select_message", comment: "")
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+
+            let cameraTitle = NSLocalizedString("image_source_select_camera", comment: "")
+            alert.addAction(UIAlertAction(title: cameraTitle, style: .default) { [weak self] _ in
+                let picker = UIImagePickerController()
+                picker.sourceType = .camera
+                picker.delegate = self
+                self?.present(picker, animated: true, completion: nil)
+            })
+
+            let cameraRollTitle = NSLocalizedString("image_source_select_camera_roll", comment: "")
+            alert.addAction(UIAlertAction(title: cameraRollTitle, style: .default) { [weak self] _ in
+                let picker = UIImagePickerController()
+                picker.sourceType = .photoLibrary
+                picker.delegate = self
+                self?.present(picker, animated: true, completion: nil)
+            })
+
+            let cancelTitle = NSLocalizedString("cancel_action", comment: "")
+            alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+
         let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }

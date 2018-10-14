@@ -8,3 +8,4 @@
 
 "NSPhotoLibraryAddUsageDescription" = "Save an image to Photo Album";
 "NSPhotoLibraryUsageDescription" = "Display an image from Photo Album";
+"NSCameraUsageDescription" = "Display an image that taken form camera";

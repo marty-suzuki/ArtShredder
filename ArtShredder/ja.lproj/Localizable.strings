@@ -13,3 +13,8 @@
 "did_save_to_camera_roll_title" = "画像の保存完了";
 "did_save_to_camera_roll_message" = "カメラロールに画像を保存しました!";
 "close_action" = "閉じる";
+"image_source_select_title" = "画像の取得先";
+"image_source_select_message" = "画像の取得先をえらんでください";
+"image_source_select_camera" = "カメラ";
+"image_source_select_camera_roll" = "カメラロール";
+"cancel_action" = "キャンセル";

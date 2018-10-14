@@ -16,6 +16,7 @@
 		3771D60D216FC711003909BE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
 		3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D610216FCBF7003909BE /* SettingViewController.swift */; };
 		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
+		37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37BB0CD72173142700C175EB /* InfoPlist.strings */; };
 		719AE58EEDEC814482CE58CF /* Pods_ArtShredder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,8 @@
 		3771D610216FCBF7003909BE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		37A069A32172F1F40083873F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37A069A52172F2110083873F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37BB0CD62173142700C175EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37BB0CD82173142900C175EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.debug.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.debug.xcconfig"; sourceTree = "<group>"; };
 		507343E919352EA6D8DC0C01 /* Pods-ArtShredder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.release.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.release.xcconfig"; sourceTree = "<group>"; };
 		8A7AB8C6A53CB22B19ED19E4 /* Pods-ArtShredder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.debug.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 				3771D60C216FC711003909BE /* Secret.swift */,
 				3771D610216FCBF7003909BE /* SettingViewController.swift */,
 				37A069A42172F1F40083873F /* Localizable.strings */,
+				37BB0CD72173142700C175EB /* InfoPlist.strings */,
 			);
 			path = ArtShredder;
 			sourceTree = "<group>";
@@ -171,6 +175,7 @@
 				37A069A22172F1F40083873F /* Localizable.strings in Resources */,
 				375D3016216D15D800D5B953 /* Assets.xcassets in Resources */,
 				375D3014216D15D700D5B953 /* Main.storyboard in Resources */,
+				37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +245,15 @@
 				37A069A52172F2110083873F /* ja */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		37BB0CD72173142700C175EB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37BB0CD62173142700C175EB /* en */,
+				37BB0CD82173142900C175EB /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

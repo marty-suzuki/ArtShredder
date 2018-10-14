@@ -1,14 +1,40 @@
-# Support Page
+# サポート
 
-## How to select image
+- [どうやって画像を選択するか](./jp#どうやって画像を選択するか)
+- [どうやって画像を保存するか](./jp#どうやって画像を保存するか)
+- [どうやってGIFアニメーションを保存するか](./jp#どうやってgifアニメーションを保存するか)
+- [どうやってSNSにシェアするか](./jp#どうやってsnsにシェアするか)
 
-You can select image with `Select Picture` button.
+## どうやって画像を選択するか
 
-![](./Images/select_image.png)
+`芸術にする画像を選択` ボタンから画像を選択することができます。
 
-## How to save image
+| 1. `選択` ボタンをタップ | 2. 画像の取得先を選択 | 3. アニメーション開始 |
+| :-: | :-: | :-: |
+| ![](./Images/jp/root.png) | ![](./Images/jp/image_source.png) | ![](./Images/jp/animated.png) |
 
-You can save image with `Save Image` button.
-It is enabled after animated.
+## どうやって画像を保存するか
 
-![](./Images/save_image.png)
+`画像を保存` ボタンで画像を保存することができます。
+このボタンは、アニメーション完了後に有効になります。
+
+| 1. `画像を保存` ボタンをタップ | 2. `画像を保存`を選択 |
+| :-: | :-: |
+| ![](./Images/jp/animated.png) | ![](./Images/jp/activity.png) |
+
+## どうやってGIFアニメーションを保存するか
+
+`GIFを保存` ボタンで画像を保存することができます。
+このボタンは、アニメーション完了後に有効になります。
+
+| 1. `GIFを保存` ボタンをタップ | 2. `画像を保存`を選択 |
+| :-: | :-: |
+| ![](./Images/jp/animated.png) | ![](./Images/jp/activity.png) |
+
+## どうやってSNSにシェアするか
+
+`画像を保存` または `GIFを保存` ボタンから画像をSNSにシェアすることができます。
+
+| 1. `保存` ボタンをタップ | 2. `Twitter`や `Facebook` などを選択  |
+| :-: | :-: |
+| ![](./Images/jp/animated.png) | ![](./Images/jp/activity.png) |

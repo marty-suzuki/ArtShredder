@@ -8,6 +8,8 @@ ArtShredder is reproducing a art of Banksy that like this video.
 
 Let's try ArtShredder!
 
+![](./Images/concept.gif)
+
 ## Support
 
 - [English](./Support/en)

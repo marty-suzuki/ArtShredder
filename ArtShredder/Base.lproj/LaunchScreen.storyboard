@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_5" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyV-xb-Rgw">
-                                <rect key="frame" x="40" y="250.33333333333334" width="334" height="395.33333333333326"/>
+                                <rect key="frame" x="180" y="270.5" width="408" height="483"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="EuF-Z5-aAa">
-                                        <rect key="frame" x="-10" y="-10" width="354" height="415.33333333333331"/>
+                                        <rect key="frame" x="-20" y="-20" width="448" height="523"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2rn-5S-G6Y">
-                                        <rect key="frame" x="80" y="151.33333333333334" width="174" height="92.666666666666657"/>
+                                        <rect key="frame" x="130" y="202" width="148" height="79"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2rn-5S-G6Y" secondAttribute="height" multiplier="167:89" id="IZM-ju-pKd"/>
                                         </constraints>
@@ -37,7 +37,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                                     </constraint>
                                     <constraint firstItem="2rn-5S-G6Y" firstAttribute="centerY" secondItem="fyV-xb-Rgw" secondAttribute="centerY" id="Cf6-4g-aub"/>
-                                    <constraint firstItem="2rn-5S-G6Y" firstAttribute="leading" secondItem="fyV-xb-Rgw" secondAttribute="leading" constant="80" id="IDI-a4-jus"/>
+                                    <constraint firstItem="2rn-5S-G6Y" firstAttribute="leading" secondItem="fyV-xb-Rgw" secondAttribute="leading" constant="80" id="IDI-a4-jus">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="130"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" secondItem="fyV-xb-Rgw" secondAttribute="height" multiplier="295:349" id="Ldu-al-ZTh"/>
                                     <constraint firstAttribute="trailing" secondItem="EuF-Z5-aAa" secondAttribute="trailing" constant="-10" id="MCP-jx-Bhf">
                                         <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
@@ -48,7 +50,9 @@
                                     <constraint firstItem="EuF-Z5-aAa" firstAttribute="top" secondItem="fyV-xb-Rgw" secondAttribute="top" constant="-10" id="YX4-7E-2xs">
                                         <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
                                     </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="2rn-5S-G6Y" secondAttribute="trailing" constant="80" id="d5r-Zr-XuH"/>
+                                    <constraint firstAttribute="trailing" secondItem="2rn-5S-G6Y" secondAttribute="trailing" constant="80" id="d5r-Zr-XuH">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="130"/>
+                                    </constraint>
                                 </constraints>
                             </view>
                         </subviews>

@@ -119,6 +119,14 @@ final class ViewController: UIViewController {
         }
 
         let controller = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            let rect = CGRect(x: imageView.center.x,
+                              y: imageView.frame.minY,
+                              width: view.bounds.size.width / 2,
+                              height: view.bounds.size.height / 2)
+            controller.popoverPresentationController?.sourceRect = rect
+            controller.popoverPresentationController?.sourceView = view
+        }
         controller.completionWithItemsHandler = { [weak self] activityType, isCompleted, returnedItems, error in
             guard isCompleted && activityType == .saveToCameraRoll else {
                 return
@@ -197,6 +205,10 @@ final class ViewController: UIViewController {
         }
 
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            controller.popoverPresentationController?.sourceRect = view.bounds
+            controller.popoverPresentationController?.sourceView = view
+        }
         controller.completionWithItemsHandler = { [weak self] activityType, isCompleted, returnedItems, error in
             guard isCompleted && activityType == .saveToCameraRoll else {
                 return

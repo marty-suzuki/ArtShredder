@@ -46,6 +46,36 @@ final class ViewController: UIViewController {
             linkButtonCoutainer.layer.masksToBounds = true
         }
     }
+    @IBOutlet private(set) weak var bannerContainerView: UIView! {
+        didSet {
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            bannerContainerView.addSubview(bannerView)
+            bannerContainerView.addConstraints(
+                [NSLayoutConstraint(item: bannerView,
+                                    attribute: .top,
+                                    relatedBy: .equal,
+                                    toItem: bannerContainerView,
+                                    attribute: .top,
+                                    multiplier: 1,
+                                    constant: 0),
+                 NSLayoutConstraint(item: bannerView,
+                                    attribute: .centerX,
+                                    relatedBy: .equal,
+                                    toItem: bannerContainerView,
+                                    attribute: .centerX,
+                                    multiplier: 1,
+                                    constant: 0)
+            ])
+        }
+    }
+    private lazy var bannerView: GADBannerView = {
+        let view = GADBannerView(adSize: kGADAdSizeBanner)
+        view.adUnitID = AdMobConfig.make().bannerAdID
+        view.rootViewController = self
+        view.delegate = self
+        view.load(GADRequest())
+        return view
+    }()
 
     private var timer: Timer?
     private var images: [UIImage] = []
@@ -60,6 +90,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
 
         _ = interstitial
+        _ = bannerView
     }
 
     private func createAndLoadInterstitial() -> GADInterstitial {
@@ -138,6 +169,7 @@ final class ViewController: UIViewController {
         if interstitial.isReady {
             interstitial.present(fromRootViewController: self)
         } else {
+            createGIF()
             interstitial = createAndLoadInterstitial()
         }
     }
@@ -241,5 +273,40 @@ extension ViewController: GADInterstitialDelegate {
     /// (such as the App Store), backgrounding the current app.
     func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
         print("interstitialWillLeaveApplication")
+    }
+}
+
+extension ViewController: GADBannerViewDelegate {
+    /// Tells the delegate an ad request loaded an ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("adViewDidReceiveAd")
+    }
+
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
     }
 }

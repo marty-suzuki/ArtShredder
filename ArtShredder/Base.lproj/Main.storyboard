@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,16 +13,16 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shuretta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ArtShredder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywI-ng-slk">
-                                <rect key="frame" x="40" y="231.66666666666663" width="295" height="349"/>
+                                <rect key="frame" x="40" y="170.33333333333334" width="334" height="395.33333333333326"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-mL-vs9">
-                                        <rect key="frame" x="57.666666666666686" y="125.33333333333334" width="180" height="98"/>
+                                        <rect key="frame" x="77" y="148.66666666666666" width="180" height="98"/>
                                         <state key="normal" image="add_image_en">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -31,19 +31,19 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SuU-8c-Bxa">
-                                        <rect key="frame" x="29.666666666666686" y="34.666666666666657" width="236" height="279.33333333333337"/>
+                                        <rect key="frame" x="33.333333333333343" y="39.666666666666657" width="267.33333333333326" height="316"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPF-9c-mb8">
-                                        <rect key="frame" x="0.0" y="349" width="295" height="197.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="395.33333333333326" width="334" height="170.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="x71-ti-Ek3">
-                                                <rect key="frame" x="0.0" y="0.0" width="295" height="197.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="170.33333333333334"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whA-by-pPt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="18.333333333333332" height="197.33333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-Tb-r2d">
-                                                                <rect key="frame" x="14.333333333333336" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="IKG-hY-5LN"/>
@@ -59,10 +59,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSe-xv-qmt">
-                                                        <rect key="frame" x="18.333333333333336" y="0.0" width="18.666666666666664" height="197.33333333333334"/>
+                                                        <rect key="frame" x="21" y="0.0" width="20.666666666666671" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtU-Zj-7pV">
-                                                                <rect key="frame" x="14.666666666666664" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="16.666666666666671" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="K5k-lx-1iY"/>
@@ -78,10 +78,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nb-ea-5TQ">
-                                                        <rect key="frame" x="37" y="0.0" width="18.333333333333329" height="197.33333333333334"/>
+                                                        <rect key="frame" x="41.666666666666671" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-Ze-GAV">
-                                                                <rect key="frame" x="14.333333333333329" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="y08-hr-ged"/>
@@ -97,10 +97,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gco-jM-nFS">
-                                                        <rect key="frame" x="55.333333333333336" y="0.0" width="18.333333333333336" height="197.33333333333334"/>
+                                                        <rect key="frame" x="62.666666666666671" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNM-Cg-apD">
-                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="ryW-74-sdB"/>
@@ -116,10 +116,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzp-0O-Aik">
-                                                        <rect key="frame" x="73.666666666666671" y="0.0" width="18.666666666666671" height="197.33333333333334"/>
+                                                        <rect key="frame" x="83.666666666666671" y="0.0" width="20.666666666666671" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chX-T6-Hsz">
-                                                                <rect key="frame" x="14.666666666666671" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="16.666666666666671" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="0Nc-dm-6UJ"/>
@@ -135,10 +135,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1JQ-nD-8ja">
-                                                        <rect key="frame" x="92.333333333333343" y="0.0" width="18.333333333333329" height="197.33333333333334"/>
+                                                        <rect key="frame" x="104.33333333333334" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH9-cf-0ZY">
-                                                                <rect key="frame" x="14.333333333333314" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="bXX-ap-k0q"/>
@@ -154,10 +154,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqu-Bu-iyA">
-                                                        <rect key="frame" x="110.66666666666666" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
+                                                        <rect key="frame" x="125.33333333333336" y="0.0" width="20.666666666666671" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXH-lg-YA0">
-                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="16.666666666666657" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="f2o-tl-8HN"/>
@@ -173,10 +173,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-8O-Mhs">
-                                                        <rect key="frame" x="129" y="0.0" width="18.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="146" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTQ-cw-n6j">
-                                                                <rect key="frame" x="14.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="3uf-kf-jjc"/>
@@ -192,10 +192,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89r-7y-kYM">
-                                                        <rect key="frame" x="147.66666666666666" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
+                                                        <rect key="frame" x="167" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YD-3c-xL2">
-                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="B4B-ap-9HP"/>
@@ -211,10 +211,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOJ-Ov-3UB">
-                                                        <rect key="frame" x="166" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
+                                                        <rect key="frame" x="188" y="0.0" width="20.666666666666657" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHM-NQ-Oh0">
-                                                                <rect key="frame" x="14.333333333333343" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="16.666666666666657" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="SrF-FU-Sec"/>
@@ -230,10 +230,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaq-7i-boK">
-                                                        <rect key="frame" x="184.33333333333334" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
+                                                        <rect key="frame" x="208.66666666666666" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chb-lz-xYC">
-                                                                <rect key="frame" x="14.333333333333314" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17.000000000000028" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="u4h-Rm-dkC"/>
@@ -249,10 +249,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxd-Ku-iyO">
-                                                        <rect key="frame" x="202.66666666666666" y="0.0" width="18.666666666666657" height="197.33333333333334"/>
+                                                        <rect key="frame" x="229.66666666666669" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGC-6T-XyV">
-                                                                <rect key="frame" x="14.666666666666657" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="dR9-hq-0Ix"/>
@@ -268,10 +268,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-nY-aLp">
-                                                        <rect key="frame" x="221.33333333333331" y="0.0" width="18.333333333333343" height="197.33333333333334"/>
+                                                        <rect key="frame" x="250.66666666666666" y="0.0" width="20.666666666666657" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3B-Le-AsE">
-                                                                <rect key="frame" x="14.333333333333371" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="16.666666666666629" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="lcp-HL-CiF"/>
@@ -287,10 +287,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-8g-L2z">
-                                                        <rect key="frame" x="239.66666666666669" y="0.0" width="18.333333333333314" height="197.33333333333334"/>
+                                                        <rect key="frame" x="271.33333333333331" y="0.0" width="21" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN5-tg-qki">
-                                                                <rect key="frame" x="14.333333333333314" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="17" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="4ei-v8-r0m"/>
@@ -306,10 +306,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h01-t7-H7E">
-                                                        <rect key="frame" x="258" y="0.0" width="18.666666666666686" height="197.33333333333334"/>
+                                                        <rect key="frame" x="292.33333333333331" y="0.0" width="20.666666666666686" height="170.33333333333334"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-zI-IKw">
-                                                                <rect key="frame" x="14.666666666666686" y="0.0" width="4" height="197.33333333333334"/>
+                                                                <rect key="frame" x="16.666666666666686" y="0.0" width="4" height="170.33333333333334"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="4" id="Slw-rc-jT7"/>
@@ -325,7 +325,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-ic-UXC">
-                                                        <rect key="frame" x="276.66666666666669" y="0.0" width="18.333333333333314" height="197.33333333333334"/>
+                                                        <rect key="frame" x="313" y="0.0" width="21" height="170.33333333333334"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -340,7 +340,7 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="F0k-JK-f80">
-                                        <rect key="frame" x="-10" y="-10" width="315" height="369"/>
+                                        <rect key="frame" x="-10" y="-10" width="354" height="415.33333333333331"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -370,14 +370,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6y6-Gn-9Ai">
-                                <rect key="frame" x="335" y="580.66666666666663" width="0.0" height="197.33333333333337"/>
+                                <rect key="frame" x="374" y="565.66666666666663" width="0.0" height="170.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="bMR-Rj-4Ze"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzt-vR-wd2">
-                                <rect key="frame" x="230" y="191.66666666666666" width="105" height="30"/>
+                                <rect key="frame" x="269" y="130.33333333333334" width="105" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save as Image"/>
                                 <connections>
@@ -385,7 +385,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-o2-n9l">
-                                <rect key="frame" x="251" y="153.66666666666666" width="84" height="30"/>
+                                <rect key="frame" x="290" y="92.333333333333329" width="84" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save as GIF"/>
                                 <connections>
@@ -393,11 +393,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUU-P0-4uF">
-                                <rect key="frame" x="333" y="54" width="22" height="22"/>
+                                <rect key="frame" x="372" y="30" width="22" height="22"/>
                                 <connections>
                                     <segue destination="Inl-cZ-j7B" kind="presentation" modalTransitionStyle="flipHorizontal" id="JVS-s7-dYv"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZC-MS-chN">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zvr-Yd-HiS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
@@ -415,7 +422,10 @@
                             <constraint firstItem="6y6-Gn-9Ai" firstAttribute="top" secondItem="ywI-ng-slk" secondAttribute="bottom" id="LSC-J6-Hfl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MUU-P0-4uF" secondAttribute="trailing" constant="20" id="P83-XJ-vN6"/>
                             <constraint firstItem="Zzt-vR-wd2" firstAttribute="trailing" secondItem="pmm-o2-n9l" secondAttribute="trailing" id="Wjg-PV-OO9"/>
+                            <constraint firstItem="oZC-MS-chN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XGT-hY-9N8"/>
                             <constraint firstItem="Zzt-vR-wd2" firstAttribute="top" secondItem="pmm-o2-n9l" secondAttribute="bottom" constant="8" id="ZQT-gz-6vH"/>
+                            <constraint firstItem="oZC-MS-chN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fQH-89-iaK"/>
+                            <constraint firstItem="oZC-MS-chN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hM2-U4-ShG"/>
                             <constraint firstItem="6y6-Gn-9Ai" firstAttribute="trailing" secondItem="ywI-ng-slk" secondAttribute="trailing" id="mVW-Jp-TlH"/>
                             <constraint firstItem="MUU-P0-4uF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="n0S-QH-Hsd"/>
                             <constraint firstItem="Zzt-vR-wd2" firstAttribute="trailing" secondItem="ywI-ng-slk" secondAttribute="trailing" id="x3F-H7-c4d"/>
@@ -423,6 +433,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bannerContainerView" destination="oZC-MS-chN" id="zlC-J3-Lr0"/>
                         <outlet property="bottomView" destination="dPF-9c-mb8" id="YKa-I3-ksu"/>
                         <outlet property="containerView" destination="ywI-ng-slk" id="4XS-3h-9sN"/>
                         <outlet property="imageView" destination="SuU-8c-Bxa" id="bSb-c8-BS9"/>
@@ -434,14 +445,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.19999999999999" y="133.00492610837438"/>
+            <point key="canvasLocation" x="134.78260869565219" y="132.88043478260872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wkj-mm-zga">
             <objects>
                 <navigationController id="Inl-cZ-j7B" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ir4-ch-Ppd">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -455,26 +466,26 @@
         <!--Setting View Controller-->
         <scene sceneID="cYa-By-JhX">
             <objects>
-                <viewController id="Dut-rr-2KQ" customClass="SettingViewController" customModule="Shuretta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dut-rr-2KQ" customClass="SettingViewController" customModule="ArtShredder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R5E-dk-TJV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dJ-0x-BYw">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdo-cJ-Y8G">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-lT-lti">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="532"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3e-au-sob">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="288"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-4K-zsf">
-                                                        <rect key="frame" x="20" y="20" width="335" height="268"/>
+                                                        <rect key="frame" x="20" y="20" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -489,16 +500,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLK-dt-B0A">
-                                                <rect key="frame" x="0.0" y="288" width="375" height="436"/>
+                                                <rect key="frame" x="0.0" y="50" width="414" height="482"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This photo frame is provided by https://www.freeiconspng.com/img/24597" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGE-mM-gMD">
-                                                        <rect key="frame" x="100" y="100" width="175" height="81.333333333333314"/>
+                                                        <rect key="frame" x="100" y="100" width="214" height="81.333333333333314"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DG-r4-BVB">
-                                                        <rect key="frame" x="20" y="20" width="335" height="396"/>
+                                                        <rect key="frame" x="20" y="20" width="374" height="442"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="7DG-r4-BVB" secondAttribute="height" multiplier="269:318" id="E4S-mc-6X2"/>
                                                         </constraints>
@@ -563,6 +574,6 @@
     </scenes>
     <resources>
         <image name="add_image_en" width="180" height="98"/>
-        <image name="frame" width="1351" height="1600"/>
+        <image name="frame" width="1349" height="1591"/>
     </resources>
 </document>

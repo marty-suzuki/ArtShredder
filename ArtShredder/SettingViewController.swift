@@ -17,6 +17,12 @@ final class SettingViewController: UIViewController {
             frameDescriptionLabel.text = String(format: localized, Const.urlString)
         }
     }
+    @IBOutlet private(set) weak var supportPageButton: UIButton! {
+        didSet {
+            let localized = NSLocalizedString("supprot_title", comment: "")
+            supportPageButton.setTitle(localized, for: .normal)
+        }
+    }
 
     private enum Const {
         static let urlString = "https://www.freeiconspng.com/img/24597"
@@ -30,6 +36,15 @@ final class SettingViewController: UIViewController {
     
     @IBAction private func openFrameWebSite(_ sender: UIButton) {
         let url = URL(string: Const.urlString)!
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
+    }
+
+    @IBAction private func supportPageTap(_ sender: UIButton) {
+        let string = NSLocalizedString("support_url", comment: "")
+        guard  let url = URL(string: string) else {
+            return
+        }
         let vc = SFSafariViewController(url: url)
         present(vc, animated: true, completion: nil)
     }

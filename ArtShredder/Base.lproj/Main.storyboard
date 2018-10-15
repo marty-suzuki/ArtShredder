@@ -469,15 +469,15 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FbQ-lT-lti">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="532"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="576"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3e-au-sob">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-4K-zsf">
                                                         <rect key="frame" x="20" y="20" width="374" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -520,6 +520,31 @@
                                                     <constraint firstAttribute="trailing" secondItem="HGE-mM-gMD" secondAttribute="trailing" constant="100" id="sZl-r3-3Si"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okq-cd-rNv">
+                                                <rect key="frame" x="0.0" y="532" width="414" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXc-RO-lho">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="1o3-8b-QA8"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                        <state key="normal" title="Support Page">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="supportPageTap:" destination="Dut-rr-2KQ" eventType="touchUpInside" id="70q-gV-CDr"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="VXc-RO-lho" firstAttribute="leading" secondItem="Okq-cd-rNv" secondAttribute="leading" constant="20" id="EHT-tG-bx5"/>
+                                                    <constraint firstItem="VXc-RO-lho" firstAttribute="top" secondItem="Okq-cd-rNv" secondAttribute="top" id="Wqt-6h-jlq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VXc-RO-lho" secondAttribute="trailing" constant="20" id="cHV-2v-DwC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VXc-RO-lho" secondAttribute="bottom" id="xVU-a5-DxQ"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -555,6 +580,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="frameDescriptionLabel" destination="HGE-mM-gMD" id="hx4-Nt-x9d"/>
+                        <outlet property="supportPageButton" destination="VXc-RO-lho" id="3yH-Rl-yK4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUi-dk-9YZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

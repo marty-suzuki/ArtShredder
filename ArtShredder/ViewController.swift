@@ -105,6 +105,14 @@ final class ViewController: UIViewController {
             let title = NSLocalizedString("image_source_select_title", comment: "")
             let message = NSLocalizedString("image_source_select_message", comment: "")
             let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+                let rect = CGRect(x: view.center.x,
+                                  y: containerView.frame.minY,
+                                  width: view.bounds.size.width / 2,
+                                  height: view.bounds.size.height / 2)
+                alert.popoverPresentationController?.sourceRect = rect
+                alert.popoverPresentationController?.sourceView = view
+            }
 
             let cameraTitle = NSLocalizedString("image_source_select_camera", comment: "")
             alert.addAction(UIAlertAction(title: cameraTitle, style: .default) { [weak self] _ in
@@ -148,8 +156,8 @@ final class ViewController: UIViewController {
 
         let controller = UIActivityViewController(activityItems: [data], applicationActivities: nil)
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-            let rect = CGRect(x: imageView.center.x,
-                              y: imageView.frame.minY,
+            let rect = CGRect(x: view.center.x,
+                              y: containerView.frame.minY,
                               width: view.bounds.size.width / 2,
                               height: view.bounds.size.height / 2)
             controller.popoverPresentationController?.sourceRect = rect
@@ -170,6 +178,14 @@ final class ViewController: UIViewController {
         let title = NSLocalizedString("did_save_to_camera_roll_title", comment: "")
         let message = NSLocalizedString("did_save_to_camera_roll_message", comment: "")
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            let rect = CGRect(x: view.center.x,
+                              y: containerView.frame.minY,
+                              width: view.bounds.size.width / 2,
+                              height: view.bounds.size.height / 2)
+            alert.popoverPresentationController?.sourceRect = rect
+            alert.popoverPresentationController?.sourceView = view
+        }
         present(alert, animated: true, completion: nil)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
@@ -234,7 +250,11 @@ final class ViewController: UIViewController {
 
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-            controller.popoverPresentationController?.sourceRect = view.bounds
+            let rect = CGRect(x: view.center.x,
+                              y: containerView.frame.minY,
+                              width: view.bounds.size.width / 2,
+                              height: view.bounds.size.height / 2)
+            controller.popoverPresentationController?.sourceRect = rect
             controller.popoverPresentationController?.sourceView = view
         }
         controller.completionWithItemsHandler = { [weak self] activityType, isCompleted, returnedItems, error in

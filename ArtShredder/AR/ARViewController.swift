@@ -36,6 +36,13 @@ final class ARViewController: UIViewController {
                 ])
         }
     }
+    @IBOutlet private(set) weak var selectImageButton: UIBarButtonItem! {
+        didSet {
+            let title = NSLocalizedString("select_to_add_art_title", comment: "")
+            selectImageButton.title = title
+        }
+    }
+
     private lazy var bannerView: GADBannerView = {
         let view = GADBannerView(adSize: kGADAdSizeBanner)
         view.adUnitID = AdMobConfig.make().bannerAdID

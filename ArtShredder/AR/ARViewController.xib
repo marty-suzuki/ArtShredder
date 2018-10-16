@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="bannerContainerView" destination="LeW-eh-8vR" id="DyF-IS-C9i"/>
                 <outlet property="sceneView" destination="UvR-Hm-sKe" id="52n-c2-qAd"/>
+                <outlet property="selectImageButton" destination="mKN-lf-yWi" id="MSf-eu-kjt"/>
                 <outlet property="view" destination="Boi-VU-5FF" id="ckK-pq-9E1"/>
             </connections>
         </placeholder>

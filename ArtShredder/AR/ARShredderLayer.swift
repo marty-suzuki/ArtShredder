@@ -47,6 +47,23 @@ final class ARShredderLayer: CALayer {
 
         backgroundColor = UIColor.clear.cgColor
 
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = {
+            let path = UIBezierPath()
+
+            (0..<20).forEach { num in
+                let _path = UIBezierPath(rect: CGRect(x: CGFloat(num) * 13.65, y: 0, width: 11, height: 564))
+                path.append(_path)
+            }
+            path.close()
+
+            return path.cgPath
+        }()
+        maskLayer.fillColor = UIColor.black.cgColor
+        maskLayer.frame = shredImageLayer.bounds
+
+        shredImageLayer.mask = maskLayer
+
         addSublayer(shredBaseLayer)
         shredBaseLayer.addSublayer(shredImageLayer)
         addSublayer(baseLayer)

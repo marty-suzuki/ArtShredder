@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARViewController" customModule="ArtShredder" customModuleProvider="target">
+            <connections>
+                <outlet property="bannerContainerView" destination="LeW-eh-8vR" id="DyF-IS-C9i"/>
+                <outlet property="sceneView" destination="UvR-Hm-sKe" id="52n-c2-qAd"/>
+                <outlet property="view" destination="Boi-VU-5FF" id="ckK-pq-9E1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Boi-VU-5FF">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvR-Hm-sKe">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                </arscnView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-RK-Heb">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Wer-M6-1cm"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem systemItem="done" id="x02-0w-Z5o">
+                            <connections>
+                                <action selector="doneTap:" destination="-1" id="1fj-Zo-UWT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="oev-ZR-K6a"/>
+                        <barButtonItem title="Select To Add Art" id="mKN-lf-yWi">
+                            <connections>
+                                <action selector="selectTap:" destination="-1" id="e3T-ui-bjA"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeW-eh-8vR">
+                    <rect key="frame" x="0.0" y="573" width="375" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="bAa-ad-tTD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="LeW-eh-8vR" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="4BQ-OD-l9O"/>
+                <constraint firstItem="LeW-eh-8vR" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="8AO-PT-Utd"/>
+                <constraint firstItem="UvR-Hm-sKe" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="Dbn-a7-Glr"/>
+                <constraint firstItem="Jx4-RK-Heb" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="MkZ-K2-j2h"/>
+                <constraint firstItem="Jx4-RK-Heb" firstAttribute="top" secondItem="LeW-eh-8vR" secondAttribute="bottom" id="YdP-Gw-1vA"/>
+                <constraint firstItem="lwt-1e-Awa" firstAttribute="bottom" secondItem="Jx4-RK-Heb" secondAttribute="bottom" id="fle-HE-YdZ"/>
+                <constraint firstItem="Jx4-RK-Heb" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="i28-DJ-tTL"/>
+                <constraint firstItem="Jx4-RK-Heb" firstAttribute="top" secondItem="UvR-Hm-sKe" secondAttribute="bottom" id="lW3-kS-gkv"/>
+                <constraint firstItem="UvR-Hm-sKe" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="n5x-mP-b4y"/>
+                <constraint firstItem="UvR-Hm-sKe" firstAttribute="top" secondItem="Boi-VU-5FF" secondAttribute="top" id="sfy-hA-eNU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="lwt-1e-Awa"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>

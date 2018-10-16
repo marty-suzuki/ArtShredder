@@ -19,6 +19,7 @@
 		37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37BB0CD72173142700C175EB /* InfoPlist.strings */; };
 		37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A4D2175E5F700C7E693 /* ARViewController.swift */; };
 		37E47A5621765E4400C7E693 /* ARShredderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A5521765E4400C7E693 /* ARShredderLayer.swift */; };
+		37E47A5821767F5F00C7E693 /* ARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E47A5721767F5F00C7E693 /* ARViewController.xib */; };
 		719AE58EEDEC814482CE58CF /* Pods_ArtShredder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		37BB0CD82173142900C175EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37E47A4D2175E5F700C7E693 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		37E47A5521765E4400C7E693 /* ARShredderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARShredderLayer.swift; sourceTree = "<group>"; };
+		37E47A5721767F5F00C7E693 /* ARViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARViewController.xib; sourceTree = "<group>"; };
 		50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.debug.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.debug.xcconfig"; sourceTree = "<group>"; };
 		507343E919352EA6D8DC0C01 /* Pods-ArtShredder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.release.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.release.xcconfig"; sourceTree = "<group>"; };
 		8A7AB8C6A53CB22B19ED19E4 /* Pods-ArtShredder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.debug.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				37E47A4D2175E5F700C7E693 /* ARViewController.swift */,
+				37E47A5721767F5F00C7E693 /* ARViewController.xib */,
 				37E47A5521765E4400C7E693 /* ARShredderLayer.swift */,
 			);
 			path = AR;
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				375D3019216D15D800D5B953 /* LaunchScreen.storyboard in Resources */,
+				37E47A5821767F5F00C7E693 /* ARViewController.xib in Resources */,
 				37A069A22172F1F40083873F /* Localizable.strings in Resources */,
 				375D3016216D15D800D5B953 /* Assets.xcassets in Resources */,
 				375D3014216D15D700D5B953 /* Main.storyboard in Resources */,

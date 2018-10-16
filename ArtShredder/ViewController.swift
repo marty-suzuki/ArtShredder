@@ -36,6 +36,13 @@ final class ViewController: UIViewController {
             saveGifButton.setTitle(title, for: .normal)
         }
     }
+    @IBOutlet private(set) weak var arButton: UIButton! {
+        didSet {
+            let title = NSLocalizedString("ar_mode_title", comment: "")
+            arButton.setTitle(title, for: .normal)
+        }
+    }
+
     @IBOutlet private(set) weak var bottomView: UIView!
     @IBOutlet private(set) weak var imageView: UIImageView!
     @IBOutlet private(set) weak var imageViewCenterYConstraint: NSLayoutConstraint!
@@ -79,6 +86,7 @@ final class ViewController: UIViewController {
 
     private var timer: Timer?
     private var images: [UIImage] = []
+    private var interstitialReferer: InterstitialReferer?
 
     private lazy var interstitial = createAndLoadInterstitial()
 
@@ -221,11 +229,28 @@ final class ViewController: UIViewController {
 
     @IBAction func saveGif(_ sender: UIButton) {
         if interstitial.isReady {
+            interstitialReferer = .saveGIF
             interstitial.present(fromRootViewController: self)
         } else {
             createGIF()
             interstitial = createAndLoadInterstitial()
         }
+    }
+
+    @IBAction func arButtonTap(_ sender: UIButton) {
+        if interstitial.isReady {
+            interstitialReferer = .arMode
+            interstitial.present(fromRootViewController: self)
+        } else {
+            showAR()
+            interstitial = createAndLoadInterstitial()
+        }
+    }
+
+    private func showAR() {
+        let vc = ARViewController()
+        vc.modalTransitionStyle = .flipHorizontal
+        present(vc, animated: true, completion: nil)
     }
 
     private func createGIF() {
@@ -328,7 +353,15 @@ extension ViewController: GADInterstitialDelegate {
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         print("interstitialDidDismissScreen")
         interstitial = createAndLoadInterstitial()
-        createGIF()
+        switch interstitialReferer {
+        case .saveGIF?:
+            createGIF()
+        case .arMode?:
+            showAR()
+        case .none:
+            break
+        }
+        interstitialReferer = nil
     }
 
     /// Tells the delegate that a user click will open another app
@@ -370,5 +403,12 @@ extension ViewController: GADBannerViewDelegate {
     /// the App Store), backgrounding the current app.
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
         print("adViewWillLeaveApplication")
+    }
+}
+
+extension ViewController {
+    private enum InterstitialReferer {
+        case saveGIF
+        case arMode
     }
 }

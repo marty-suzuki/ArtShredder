@@ -378,6 +378,14 @@
                                     <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPP-sR-jPE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Noo-Hs-xyD">
+                                <rect key="frame" x="40" y="130.33333333333334" width="66" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="AR Mode"/>
+                                <connections>
+                                    <segue destination="ee0-9z-6dF" kind="presentation" modalTransitionStyle="flipHorizontal" id="U2U-sG-K8B"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmm-o2-n9l">
                                 <rect key="frame" x="290" y="92.333333333333329" width="84" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -402,6 +410,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ywI-ng-slk" firstAttribute="leading" secondItem="Noo-Hs-xyD" secondAttribute="leading" id="4fi-Gi-a50"/>
                             <constraint firstItem="ywI-ng-slk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="7lT-wu-FyE">
                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
                             </constraint>
@@ -418,6 +427,7 @@
                             <constraint firstItem="oZC-MS-chN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fQH-89-iaK"/>
                             <constraint firstItem="oZC-MS-chN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hM2-U4-ShG"/>
                             <constraint firstItem="MUU-P0-4uF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="n0S-QH-Hsd"/>
+                            <constraint firstItem="ywI-ng-slk" firstAttribute="top" secondItem="Noo-Hs-xyD" secondAttribute="bottom" constant="10" id="tqO-kS-BxC"/>
                             <constraint firstItem="Zzt-vR-wd2" firstAttribute="trailing" secondItem="ywI-ng-slk" secondAttribute="trailing" id="x3F-H7-c4d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -434,8 +444,62 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="70p-24-T9F" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="134.78260869565219" y="132.88043478260872"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DCs-1u-gHZ">
+            <objects>
+                <viewController id="ee0-9z-6dF" customClass="ARViewController" customModule="ArtShredder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kub-T6-6fU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pb2-Sm-cmb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELW-O7-OX3">
+                                <rect key="frame" x="184" y="592" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTap:" destination="ee0-9z-6dF" eventType="touchUpInside" id="br2-q0-wwv"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ly-0g-cZ6">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Xut-ba-G6C"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="done" id="RIR-0G-xd0">
+                                        <connections>
+                                            <segue destination="70p-24-T9F" kind="unwind" unwindAction="returnToMeWithSegue:" id="p4v-DL-Foi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pb2-Sm-cmb" firstAttribute="trailing" secondItem="NRU-K6-Ebn" secondAttribute="trailing" id="0tn-4S-4Lt"/>
+                            <constraint firstItem="4ly-0g-cZ6" firstAttribute="top" secondItem="pb2-Sm-cmb" secondAttribute="bottom" id="BC4-Ss-yqk"/>
+                            <constraint firstItem="4ly-0g-cZ6" firstAttribute="leading" secondItem="NRU-K6-Ebn" secondAttribute="leading" id="XP7-yB-U51"/>
+                            <constraint firstItem="NRU-K6-Ebn" firstAttribute="bottom" secondItem="4ly-0g-cZ6" secondAttribute="bottom" id="Yjp-dV-4Lg"/>
+                            <constraint firstItem="4ly-0g-cZ6" firstAttribute="trailing" secondItem="NRU-K6-Ebn" secondAttribute="trailing" id="k7S-0e-u7B"/>
+                            <constraint firstItem="pb2-Sm-cmb" firstAttribute="top" secondItem="kub-T6-6fU" secondAttribute="top" id="yGA-9i-ovz"/>
+                            <constraint firstItem="pb2-Sm-cmb" firstAttribute="leading" secondItem="NRU-K6-Ebn" secondAttribute="leading" id="zy3-aG-PB1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NRU-K6-Ebn"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="pb2-Sm-cmb" id="D37-pt-dbf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTo-6y-oS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="828.26086956521749"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wkj-mm-zga">
@@ -574,7 +638,7 @@
                     <navigationItem key="navigationItem" id="orh-Kv-5Oe">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="D1B-HS-vuS">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="WGN-dI-aF1"/>
+                                <segue destination="70p-24-T9F" kind="unwind" unwindAction="returnToMeWithSegue:" id="X70-bA-piW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

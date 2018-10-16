@@ -100,6 +100,8 @@ final class ViewController: UIViewController {
         return interstitial
     }
 
+    @IBAction private func returnToMe(segue: UIStoryboardSegue) {}
+
     @IBAction private func selectPicture(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let title = NSLocalizedString("image_source_select_title", comment: "")

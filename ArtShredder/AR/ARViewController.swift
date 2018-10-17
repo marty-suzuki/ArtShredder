@@ -36,10 +36,15 @@ final class ARViewController: UIViewController {
                 ])
         }
     }
-    @IBOutlet private(set) weak var selectImageButton: UIBarButtonItem! {
+    @IBOutlet private(set) weak var selectImageButton: UIButton! {
         didSet {
             let title = NSLocalizedString("select_to_add_art_title", comment: "")
-            selectImageButton.title = title
+            selectImageButton.setTitle(title, for: .normal)
+            selectImageButton.isHidden = true
+            selectImageButton.layer.borderWidth = 2
+            selectImageButton.layer.borderColor = UIColor.white.cgColor
+            selectImageButton.layer.cornerRadius = 4
+            selectImageButton.layer.masksToBounds = true
         }
     }
 
@@ -52,7 +57,15 @@ final class ARViewController: UIViewController {
         return view
     }()
 
-    private var selectedShredderNode: ARShredderNode?
+    private weak var shredderNode: ARShredderNode? {
+        didSet {
+            shredderNode?.animationFinished = { [weak self] in
+                DispatchQueue.main.async {
+                    self?.selectImageButton.isHidden = false
+                }
+            }
+        }
+    }
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -94,7 +107,7 @@ final class ARViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @IBAction private func selectTap(_ sender: UIBarButtonItem) {
+    @IBAction private func selectTap(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let picker = UIImagePickerController()
             picker.sourceType = .photoLibrary
@@ -103,40 +116,25 @@ final class ARViewController: UIViewController {
             present(picker, animated: true, completion: nil)
         }
     }
-
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-
-    }
-
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-
-    }
-
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-
-    }
 }
 
 extension ARViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        let semaphore = DispatchSemaphore(value: 1)
         DispatchQueue.main.async {
-            if let planeAnchor = anchor as? ARPlaneAnchor, node.childNodes.filter({ $0 is ARShredderNode }).count < 1 {
-                let shredderNode = ARShredderNode(anchor: planeAnchor)
-                self.selectedShredderNode = shredderNode
-                node.addChildNode(shredderNode)
+            if
+                (anchor as? ARPlaneAnchor) != nil,
+                self.shredderNode == nil,
+                let node = self.sceneView.pointOfView {
+                let shredderNode = ARShredderNode(node: node)
+                self.sceneView.scene.rootNode.addChildNode(shredderNode)
+                self.shredderNode = shredderNode
+                self.sceneView.debugOptions = []
+                self.selectImageButton.isHidden = false
             }
+            semaphore.signal()
         }
-    }
-
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        DispatchQueue.main.async {
-            if let planeAnchor = anchor as? ARPlaneAnchor, let shredderNode = node.childNodes.first as? ARShredderNode {
-                shredderNode.update(anchor: planeAnchor)
-            }
-        }
+        semaphore.wait()
     }
 }
 
@@ -144,13 +142,14 @@ extension ARViewController: UIImagePickerControllerDelegate, UINavigationControl
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if
             let image = info[.originalImage] as? UIImage,
-            let node = selectedShredderNode
+            let node = shredderNode
         {
             node.setImage(image)
         }
 
         dismiss(animated: true) { [weak self] in
-            self?.selectedShredderNode?.startAnimation()
+            self?.shredderNode?.startAnimation()
+            self?.selectImageButton.isHidden = true
         }
     }
 }

@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="bannerContainerView" destination="LeW-eh-8vR" id="DyF-IS-C9i"/>
                 <outlet property="sceneView" destination="UvR-Hm-sKe" id="52n-c2-qAd"/>
-                <outlet property="selectImageButton" destination="mKN-lf-yWi" id="MSf-eu-kjt"/>
+                <outlet property="selectImageButton" destination="UuN-X1-xGm" id="k5Q-Aa-UZn"/>
                 <outlet property="view" destination="Boi-VU-5FF" id="ckK-pq-9E1"/>
             </connections>
         </placeholder>
@@ -25,6 +25,7 @@
             <subviews>
                 <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvR-Hm-sKe">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <gestureRecognizers/>
                 </arscnView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-RK-Heb">
                     <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -37,12 +38,6 @@
                                 <action selector="doneTap:" destination="-1" id="1fj-Zo-UWT"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="oev-ZR-K6a"/>
-                        <barButtonItem title="Select To Add Art" id="mKN-lf-yWi">
-                            <connections>
-                                <action selector="selectTap:" destination="-1" id="e3T-ui-bjA"/>
-                            </connections>
-                        </barButtonItem>
                     </items>
                 </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeW-eh-8vR">
@@ -52,6 +47,19 @@
                         <constraint firstAttribute="height" constant="50" id="bAa-ad-tTD"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuN-X1-xGm">
+                    <rect key="frame" x="20" y="521" width="335" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="mAH-H3-mMN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="Select To Add Art">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="selectTap:" destination="-1" eventType="touchUpInside" id="QyM-bE-4l8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
@@ -59,11 +67,14 @@
                 <constraint firstItem="LeW-eh-8vR" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="8AO-PT-Utd"/>
                 <constraint firstItem="UvR-Hm-sKe" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="Dbn-a7-Glr"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="MkZ-K2-j2h"/>
+                <constraint firstItem="lwt-1e-Awa" firstAttribute="trailing" secondItem="UuN-X1-xGm" secondAttribute="trailing" constant="20" id="Rue-HC-acI"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="top" secondItem="LeW-eh-8vR" secondAttribute="bottom" id="YdP-Gw-1vA"/>
+                <constraint firstItem="LeW-eh-8vR" firstAttribute="top" secondItem="UuN-X1-xGm" secondAttribute="bottom" constant="8" id="ar4-Ea-DYj"/>
                 <constraint firstItem="lwt-1e-Awa" firstAttribute="bottom" secondItem="Jx4-RK-Heb" secondAttribute="bottom" id="fle-HE-YdZ"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="i28-DJ-tTL"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="top" secondItem="UvR-Hm-sKe" secondAttribute="bottom" id="lW3-kS-gkv"/>
                 <constraint firstItem="UvR-Hm-sKe" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="n5x-mP-b4y"/>
+                <constraint firstItem="UuN-X1-xGm" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" constant="20" id="s0q-ip-eGe"/>
                 <constraint firstItem="UvR-Hm-sKe" firstAttribute="top" secondItem="Boi-VU-5FF" secondAttribute="top" id="sfy-hA-eNU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="lwt-1e-Awa"/>

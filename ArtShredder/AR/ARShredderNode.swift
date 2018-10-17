@@ -18,7 +18,8 @@ final class ARShredderNode: SCNNode {
     }
 
     let shredderLayer = ARShredderLayer()
-    private(set) var isAnimated = false
+
+    var animationFinished: (() -> ())?
 
     init(node: SCNNode) {
         super.init()
@@ -95,6 +96,6 @@ extension ARShredderNode: CAAnimationDelegate {
         else {
             return
         }
-        isAnimated = true
+        animationFinished?()
     }
 }

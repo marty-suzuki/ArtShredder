@@ -103,6 +103,7 @@ final class AspectFillImageLayer: CALayer {
     func setImage(_ image: UIImage) {
         let size = image.size
         imageLayer.frame.size = initialSize
+        imageLayer.frame.origin = .zero
         let layerSize = imageLayer.frame.size
 
         if size.height > size.width {

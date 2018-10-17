@@ -20,6 +20,9 @@
 		37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A4D2175E5F700C7E693 /* ARViewController.swift */; };
 		37E47A5621765E4400C7E693 /* ARShredderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A5521765E4400C7E693 /* ARShredderLayer.swift */; };
 		37E47A5821767F5F00C7E693 /* ARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E47A5721767F5F00C7E693 /* ARViewController.xib */; };
+		37E47A5B2176EADB00C7E693 /* UIImage.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A5A2176EADB00C7E693 /* UIImage.extension.swift */; };
+		37E47A5D2176EB1000C7E693 /* Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A5C2176EB1000C7E693 /* Additional.swift */; };
+		37E47A5F2176EE7000C7E693 /* ARShredderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A5E2176EE7000C7E693 /* ARShredderNode.swift */; };
 		719AE58EEDEC814482CE58CF /* Pods_ArtShredder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		37E47A4D2175E5F700C7E693 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		37E47A5521765E4400C7E693 /* ARShredderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARShredderLayer.swift; sourceTree = "<group>"; };
 		37E47A5721767F5F00C7E693 /* ARViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARViewController.xib; sourceTree = "<group>"; };
+		37E47A5A2176EADB00C7E693 /* UIImage.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.extension.swift; sourceTree = "<group>"; };
+		37E47A5C2176EB1000C7E693 /* Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additional.swift; sourceTree = "<group>"; };
+		37E47A5E2176EE7000C7E693 /* ARShredderNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARShredderNode.swift; sourceTree = "<group>"; };
 		50664214F47F5720970D3FB3 /* Pods-Shuretta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.debug.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.debug.xcconfig"; sourceTree = "<group>"; };
 		507343E919352EA6D8DC0C01 /* Pods-ArtShredder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.release.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.release.xcconfig"; sourceTree = "<group>"; };
 		8A7AB8C6A53CB22B19ED19E4 /* Pods-ArtShredder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtShredder.debug.xcconfig"; path = "Target Support Files/Pods-ArtShredder/Pods-ArtShredder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		375D300D216D15D700D5B953 /* ArtShredder */ = {
 			isa = PBXGroup;
 			children = (
+				37E47A592176EACA00C7E693 /* Extension */,
 				37E47A4C2175E59C00C7E693 /* AR */,
 				375D300E216D15D700D5B953 /* AppDelegate.swift */,
 				375D3010216D15D700D5B953 /* ViewController.swift */,
@@ -124,8 +131,18 @@
 				37E47A4D2175E5F700C7E693 /* ARViewController.swift */,
 				37E47A5721767F5F00C7E693 /* ARViewController.xib */,
 				37E47A5521765E4400C7E693 /* ARShredderLayer.swift */,
+				37E47A5E2176EE7000C7E693 /* ARShredderNode.swift */,
 			);
 			path = AR;
+			sourceTree = "<group>";
+		};
+		37E47A592176EACA00C7E693 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				37E47A5C2176EB1000C7E693 /* Additional.swift */,
+				37E47A5A2176EADB00C7E693 /* UIImage.extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +252,9 @@
 				3771D60D216FC711003909BE /* Secret.swift in Sources */,
 				37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */,
 				3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */,
+				37E47A5D2176EB1000C7E693 /* Additional.swift in Sources */,
+				37E47A5F2176EE7000C7E693 /* ARShredderNode.swift in Sources */,
+				37E47A5B2176EADB00C7E693 /* UIImage.extension.swift in Sources */,
 				375D300F216D15D700D5B953 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,6 +52,8 @@ final class ARViewController: UIViewController {
         return view
     }()
 
+    private var selectedShredderNode: ARShredderNode?
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -120,59 +122,35 @@ final class ARViewController: UIViewController {
 
 extension ARViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-
+        DispatchQueue.main.async {
+            if let planeAnchor = anchor as? ARPlaneAnchor, node.childNodes.filter({ $0 is ARShredderNode }).count < 1 {
+                let shredderNode = ARShredderNode(anchor: planeAnchor)
+                self.selectedShredderNode = shredderNode
+                node.addChildNode(shredderNode)
+            }
+        }
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-
+        DispatchQueue.main.async {
+            if let planeAnchor = anchor as? ARPlaneAnchor, let shredderNode = node.childNodes.first as? ARShredderNode {
+                shredderNode.update(anchor: planeAnchor)
+            }
+        }
     }
 }
 
 extension ARViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    private func addImageNode(with image: UIImage) {
-        guard let camera = sceneView.pointOfView else {
-            return
-        }
-
-        let position = camera.convertPosition(SCNVector3(x: 0, y: 0, z: -0.5), to: nil)
-        let size = CGSize(width: 514, height: 743)
-        let node = SCNNode()
-        let scale: CGFloat = 0.3
-        let geometry = SCNPlane(width: size.width * scale / size.height, height: scale)
-
-        let shredderLayer = ARShredderLayer()
-        shredderLayer.setImage(image)
-
-        [shredderLayer.baseImageLayer, shredderLayer.shredImageLayer].forEach {
-            let animation = CABasicAnimation(keyPath: "transform.translation.y")
-            animation.duration = 5
-            animation.beginTime = CACurrentMediaTime() + 2
-            animation.fromValue = 0
-            animation.toValue = -232
-            animation.isRemovedOnCompletion = false
-            animation.fillMode = .forwards
-            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            $0.add(animation, forKey: "move")
-        }
-
-        let material = SCNMaterial()
-        material.diffuse.contents = shredderLayer
-        geometry.materials = [material]
-        node.geometry = geometry
-        node.position = position
-
-        sceneView.scene.rootNode.addChildNode(node)
-    }
-
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if
+            let image = info[.originalImage] as? UIImage,
+            let node = selectedShredderNode
+        {
+            node.setImage(image)
+        }
 
-        picker.dismiss(animated: true) { [weak self] in
-            guard
-                let me = self,
-                let image = info[.originalImage] as? UIImage
-            else { return }
-            me.addImageNode(with: image)
+        dismiss(animated: true) { [weak self] in
+            self?.selectedShredderNode?.startAnimation()
         }
     }
 }

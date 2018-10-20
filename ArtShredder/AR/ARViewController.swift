@@ -6,10 +6,11 @@
 //  Copyright © 2018年 marty-suzuki. All rights reserved.
 //
 
-import UIKit
-import SceneKit
 import ARKit
 import GoogleMobileAds
+import Prex
+import SceneKit
+import UIKit
 
 final class ARViewController: UIViewController {
 
@@ -40,7 +41,6 @@ final class ARViewController: UIViewController {
         didSet {
             let title = NSLocalizedString("select_to_add_art_title", comment: "")
             selectImageButton.setTitle(title, for: .normal)
-            selectImageButton.isHidden = true
             selectImageButton.layer.borderWidth = 2
             selectImageButton.layer.borderColor = UIColor.white.cgColor
             selectImageButton.layer.cornerRadius = 4
@@ -52,20 +52,13 @@ final class ARViewController: UIViewController {
         let view = GADBannerView(adSize: kGADAdSizeBanner)
         view.adUnitID = AdMobConfig.make().bannerAdID
         view.rootViewController = self
-        view.delegate = self
         view.load(GADRequest())
         return view
     }()
 
-    private weak var shredderNode: ARShredderNode? {
-        didSet {
-            shredderNode?.animationFinished = { [weak self] in
-                DispatchQueue.main.async {
-                    self?.selectImageButton.isHidden = false
-                }
-            }
-        }
-    }
+    private lazy var presenter = ARPresenter(view: self)
+    private lazy var delegateProxy = ARViewDelegateProxy(presenter: presenter,
+                                                         pointOfView: { [weak self] in self?.sceneView.pointOfView })
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -82,7 +75,10 @@ final class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sceneView.delegate = self
+        presenter.reflect()
+
+        bannerView.delegate = delegateProxy
+        sceneView.delegate = delegateProxy
         sceneView.scene = SCNScene()
         sceneView.debugOptions = .showFeaturePoints
 
@@ -111,80 +107,22 @@ final class ARViewController: UIViewController {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let picker = UIImagePickerController()
             picker.sourceType = .photoLibrary
-            picker.delegate = self
+            picker.delegate = delegateProxy
             picker.modalPresentationStyle = .overFullScreen
             present(picker, animated: true, completion: nil)
         }
     }
 }
 
-extension ARViewController: ARSCNViewDelegate {
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        let semaphore = DispatchSemaphore(value: 1)
-        DispatchQueue.main.async {
-            if
-                (anchor as? ARPlaneAnchor) != nil,
-                self.shredderNode == nil,
-                let node = self.sceneView.pointOfView {
-                let shredderNode = ARShredderNode(node: node)
-                self.sceneView.scene.rootNode.addChildNode(shredderNode)
-                self.shredderNode = shredderNode
-                self.sceneView.debugOptions = []
-                self.selectImageButton.isHidden = false
-            }
-            semaphore.signal()
-        }
-        semaphore.wait()
-    }
-}
-
-extension ARViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if
-            let image = info[.originalImage] as? UIImage,
-            let node = shredderNode
-        {
-            node.setImage(image)
+extension ARViewController: View {
+    func reflect(change: StateChange<AR.State>) {
+        if let isHidden = change.changedProperty(for: \.isImageSelectHidden)?.value {
+            selectImageButton.isHidden = isHidden
         }
 
-        dismiss(animated: true) { [weak self] in
-            self?.shredderNode?.startAnimation()
-            self?.selectImageButton.isHidden = true
+        if let node = change.changedProperty(for: \.shredderNode)?.value {
+            sceneView.scene.rootNode.addChildNode(node)
+            sceneView.debugOptions = []
         }
-    }
-}
-
-extension ARViewController: GADBannerViewDelegate {
-    /// Tells the delegate an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("adViewDidReceiveAd")
-    }
-
-    /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-
-    /// Tells the delegate that a full-screen view will be presented in response
-    /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("adViewWillPresentScreen")
-    }
-
-    /// Tells the delegate that the full-screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewWillDismissScreen")
-    }
-
-    /// Tells the delegate that the full-screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewDidDismissScreen")
-    }
-
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
     }
 }

@@ -48,4 +48,20 @@ final class SettingViewController: UIViewController {
         let vc = SFSafariViewController(url: url)
         present(vc, animated: true, completion: nil)
     }
+
+    @IBAction private func prexTap(_ sender: UIButton) {
+        guard  let url = URL(string: "https://github.com/marty-suzuki/Prex") else {
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
+    }
+
+    @IBAction private func googleMobileAdsTap(_ sender: UIButton) {
+        guard  let url = URL(string: "https://cocoapods.org/pods/Google-Mobile-Ads-SDK") else {
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
+    }
 }

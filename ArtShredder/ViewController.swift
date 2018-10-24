@@ -20,6 +20,9 @@ final class ViewController: UIViewController {
                 return
             }
             selectImageButton.setImage(image, for: .normal)
+            selectImageButton.imageView?.contentMode = .scaleAspectFit
+            selectImageButton.contentHorizontalAlignment = .fill
+            selectImageButton.contentVerticalAlignment = .fill
         }
     }
     @IBOutlet private(set) weak var saveImageButton: UIButton! {
@@ -47,12 +50,6 @@ final class ViewController: UIViewController {
     @IBOutlet private(set) weak var imageView: UIImageView!
     @IBOutlet private(set) weak var imageViewCenterYConstraint: NSLayoutConstraint!
     @IBOutlet private(set) weak var containerView: UIView!
-    @IBOutlet private(set) weak var linkButtonCoutainer: UIView! {
-        didSet {
-            linkButtonCoutainer.layer.cornerRadius = 10
-            linkButtonCoutainer.layer.masksToBounds = true
-        }
-    }
     @IBOutlet private(set) weak var bannerContainerView: UIView! {
         didSet {
             bannerView.translatesAutoresizingMaskIntoConstraints = false

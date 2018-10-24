@@ -21,6 +21,7 @@ final class ARPresenter: Presenter<AR.Action, AR.State> {
 
     func setShredderNode(_ node: ARShredderNode) {
         dispatch(.setIsImageSelectHidden(false))
+        dispatch(.setIsAlphaViewHidden(true))
         dispatch(.setShredderNode(node))
         node.animationFinished = { [weak self] in
             self?.dispatch(.setIsImageSelectHidden(false))

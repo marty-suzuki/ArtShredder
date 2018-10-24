@@ -45,12 +45,25 @@ final class ARViewController: UIViewController {
             selectImageButton.layer.borderColor = UIColor.white.cgColor
             selectImageButton.layer.cornerRadius = 4
             selectImageButton.layer.masksToBounds = true
+            selectImageButton.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        }
+    }
+    @IBOutlet private(set) weak var alphaView: UIView! {
+        didSet {
+            alphaView.isUserInteractionEnabled = false
+        }
+    }
+    @IBOutlet private(set) weak var noRecognitionLabel: UILabel! {
+        didSet {
+            let title = NSLocalizedString("ar_no_recognition_text", comment: "")
+            noRecognitionLabel.text = title
         }
     }
 
+
     private lazy var bannerView: GADBannerView = {
         let view = GADBannerView(adSize: kGADAdSizeBanner)
-        view.adUnitID = AdMobConfig.make().bannerAdID
+        view.adUnitID = AdMobConfig.make().banner.arBottomAdID
         view.rootViewController = self
         view.load(GADRequest())
         return view
@@ -123,6 +136,10 @@ extension ARViewController: View {
         if let node = change.changedProperty(for: \.shredderNode)?.value {
             sceneView.scene.rootNode.addChildNode(node)
             sceneView.debugOptions = []
+        }
+
+        if let isHidden = change.changedProperty(for: \.isAlphaViewHidden)?.value {
+            alphaView.isHidden = isHidden
         }
     }
 }

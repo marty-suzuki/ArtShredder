@@ -8,6 +8,18 @@
 
 struct AdMobConfig {
     let appID: String
-    let interstitialAdID: String
-    let bannerAdID: String
+    let interstitial: Interstitial
+    let banner: Banner
+}
+
+extension AdMobConfig {
+    struct Interstitial {
+        let gifButtonAdID: String
+        let arButtonAdID: String
+    }
+
+    struct Banner {
+        let normalBottomAdID: String
+        let arBottomAdID: String
+    }
 }

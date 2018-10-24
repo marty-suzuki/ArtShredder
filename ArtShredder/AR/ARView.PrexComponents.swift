@@ -15,11 +15,13 @@ enum AR {
         case setImage(UIImage)
         case startAnimation
         case setIsImageSelectHidden(Bool)
+        case setIsAlphaViewHidden(Bool)
     }
 
     struct State: Prex.State {
         fileprivate(set) weak var shredderNode: ARShredderNode?
         fileprivate(set) var isImageSelectHidden = true
+        fileprivate(set) var isAlphaViewHidden = false
     }
 
     struct Mutation: Prex.Mutation {
@@ -36,6 +38,9 @@ enum AR {
 
             case let .setIsImageSelectHidden(isHidden):
                 state.isImageSelectHidden = isHidden
+
+            case let .setIsAlphaViewHidden(isHidden):
+                state.isAlphaViewHidden = isHidden
             }
         }
     }

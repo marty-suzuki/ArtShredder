@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARViewController" customModule="ArtShredder" customModuleProvider="target">
             <connections>
+                <outlet property="alphaView" destination="5Vf-hi-Hgo" id="YWT-u5-1Rf"/>
                 <outlet property="bannerContainerView" destination="LeW-eh-8vR" id="DyF-IS-C9i"/>
+                <outlet property="noRecognitionLabel" destination="fss-fQ-MRB" id="3W2-9a-7hV"/>
                 <outlet property="sceneView" destination="UvR-Hm-sKe" id="52n-c2-qAd"/>
                 <outlet property="selectImageButton" destination="UuN-X1-xGm" id="k5Q-Aa-UZn"/>
                 <outlet property="view" destination="Boi-VU-5FF" id="ckK-pq-9E1"/>
@@ -40,13 +42,6 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeW-eh-8vR">
-                    <rect key="frame" x="0.0" y="573" width="375" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="bAa-ad-tTD"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuN-X1-xGm">
                     <rect key="frame" x="20" y="521" width="335" height="44"/>
                     <constraints>
@@ -60,17 +55,45 @@
                         <action selector="selectTap:" destination="-1" eventType="touchUpInside" id="QyM-bE-4l8"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Vf-hi-Hgo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please let the device recognize the wall." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fss-fQ-MRB">
+                            <rect key="frame" x="20" y="283" width="335" height="57.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25168557363013699" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="fss-fQ-MRB" firstAttribute="leading" secondItem="5Vf-hi-Hgo" secondAttribute="leading" constant="20" id="0IJ-Se-bRt"/>
+                        <constraint firstItem="fss-fQ-MRB" firstAttribute="centerY" secondItem="5Vf-hi-Hgo" secondAttribute="centerY" id="cbi-Ga-4LJ"/>
+                        <constraint firstAttribute="trailing" secondItem="fss-fQ-MRB" secondAttribute="trailing" constant="20" id="d3g-6h-6pp"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeW-eh-8vR">
+                    <rect key="frame" x="0.0" y="573" width="375" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="bAa-ad-tTD"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
                 <constraint firstItem="LeW-eh-8vR" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="4BQ-OD-l9O"/>
+                <constraint firstItem="5Vf-hi-Hgo" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="5KI-3d-knk"/>
+                <constraint firstItem="5Vf-hi-Hgo" firstAttribute="top" secondItem="Boi-VU-5FF" secondAttribute="top" id="619-A9-jtC"/>
                 <constraint firstItem="LeW-eh-8vR" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="8AO-PT-Utd"/>
                 <constraint firstItem="UvR-Hm-sKe" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="Dbn-a7-Glr"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="leading" secondItem="lwt-1e-Awa" secondAttribute="leading" id="MkZ-K2-j2h"/>
                 <constraint firstItem="lwt-1e-Awa" firstAttribute="trailing" secondItem="UuN-X1-xGm" secondAttribute="trailing" constant="20" id="Rue-HC-acI"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="top" secondItem="LeW-eh-8vR" secondAttribute="bottom" id="YdP-Gw-1vA"/>
                 <constraint firstItem="LeW-eh-8vR" firstAttribute="top" secondItem="UuN-X1-xGm" secondAttribute="bottom" constant="8" id="ar4-Ea-DYj"/>
+                <constraint firstItem="5Vf-hi-Hgo" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="dtI-7e-ZCa"/>
                 <constraint firstItem="lwt-1e-Awa" firstAttribute="bottom" secondItem="Jx4-RK-Heb" secondAttribute="bottom" id="fle-HE-YdZ"/>
+                <constraint firstItem="Jx4-RK-Heb" firstAttribute="top" secondItem="5Vf-hi-Hgo" secondAttribute="bottom" id="gvV-zY-adY"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="i28-DJ-tTL"/>
                 <constraint firstItem="Jx4-RK-Heb" firstAttribute="top" secondItem="UvR-Hm-sKe" secondAttribute="bottom" id="lW3-kS-gkv"/>
                 <constraint firstItem="UvR-Hm-sKe" firstAttribute="trailing" secondItem="lwt-1e-Awa" secondAttribute="trailing" id="n5x-mP-b4y"/>

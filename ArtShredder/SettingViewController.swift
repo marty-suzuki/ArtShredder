@@ -10,6 +10,15 @@ import UIKit
 import SafariServices
 
 final class SettingViewController: UIViewController {
+    @IBOutlet private(set) weak var versionLabel: UILabel! {
+        didSet {
+            guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+                versionLabel.text = "Version: unknown"
+                return
+            }
+            versionLabel.text = "Version: v\(version)"
+        }
+    }
 
     @IBOutlet private(set) weak var frameDescriptionLabel: UILabel! {
         didSet {

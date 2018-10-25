@@ -733,6 +733,7 @@
                     <connections>
                         <outlet property="frameDescriptionLabel" destination="HGE-mM-gMD" id="hx4-Nt-x9d"/>
                         <outlet property="supportPageButton" destination="VXc-RO-lho" id="3yH-Rl-yK4"/>
+                        <outlet property="versionLabel" destination="Qy3-4K-zsf" id="QgB-Aj-g5g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUi-dk-9YZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

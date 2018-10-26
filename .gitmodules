@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/Prex"]
+	path = Carthage/Checkouts/Prex
+	url = https://github.com/marty-suzuki/Prex.git

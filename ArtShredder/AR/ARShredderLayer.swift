@@ -108,14 +108,30 @@ final class AspectFillImageLayer: CALayer {
 
         if size.height > size.width {
             let relativeHeight = (layerSize.width / size.width) * size.height
-            let delta = abs(relativeHeight - layerSize.height) / 2
-            imageLayer.frame.origin.y = -delta
-            imageLayer.frame.size.height = relativeHeight
+
+            if relativeHeight < layerSize.height {
+                let relativeWidth = (layerSize.height / size.height) * size.width
+                let delta = abs(relativeWidth - layerSize.width) / 2
+                imageLayer.frame.origin.x = -delta
+                imageLayer.frame.size.width = relativeWidth
+            } else {
+                let delta = abs(relativeHeight - layerSize.height) / 2
+                imageLayer.frame.origin.y = -delta
+                imageLayer.frame.size.height = relativeHeight
+            }
         } else {
             let relativeWidth = (layerSize.height / size.height) * size.width
-            let delta = abs(relativeWidth - layerSize.width) / 2
-            imageLayer.frame.origin.x = -delta
-            imageLayer.frame.size.width = relativeWidth
+
+            if relativeWidth < layerSize.width {
+                let relativeHeight = (layerSize.width / size.width) * size.height
+                let delta = abs(relativeHeight - layerSize.height) / 2
+                imageLayer.frame.origin.y = -delta
+                imageLayer.frame.size.height = relativeHeight
+            } else {
+                let delta = abs(relativeWidth - layerSize.width) / 2
+                imageLayer.frame.origin.x = -delta
+                imageLayer.frame.size.width = relativeWidth
+            }
         }
 
         imageLayer.contents = image.cgImage

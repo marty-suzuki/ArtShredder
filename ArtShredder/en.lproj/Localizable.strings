@@ -22,3 +22,4 @@
 "supprot_title" = "Support Page";
 "select_to_add_art_title" = "Select to add Art";
 "ar_mode_title" = "AR Mode";
+"ar_no_recognition_text" = "Please let the device recognize the wall.";

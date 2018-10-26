@@ -22,3 +22,4 @@
 "supprot_title" = "サポートページ";
 "select_to_add_art_title" = "芸術にする画像を選択";
 "ar_mode_title" = "ARモード";
+"ar_no_recognition_text" = "デバイスに壁を認識させてください。";

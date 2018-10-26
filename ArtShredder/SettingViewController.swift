@@ -10,6 +10,15 @@ import UIKit
 import SafariServices
 
 final class SettingViewController: UIViewController {
+    @IBOutlet private(set) weak var versionLabel: UILabel! {
+        didSet {
+            guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+                versionLabel.text = "Version: unknown"
+                return
+            }
+            versionLabel.text = "Version: v\(version)"
+        }
+    }
 
     @IBOutlet private(set) weak var frameDescriptionLabel: UILabel! {
         didSet {
@@ -43,6 +52,22 @@ final class SettingViewController: UIViewController {
     @IBAction private func supportPageTap(_ sender: UIButton) {
         let string = NSLocalizedString("support_url", comment: "")
         guard  let url = URL(string: string) else {
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
+    }
+
+    @IBAction private func prexTap(_ sender: UIButton) {
+        guard  let url = URL(string: "https://github.com/marty-suzuki/Prex") else {
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
+    }
+
+    @IBAction private func googleMobileAdsTap(_ sender: UIButton) {
+        guard  let url = URL(string: "https://cocoapods.org/pods/Google-Mobile-Ads-SDK") else {
             return
         }
         let vc = SFSafariViewController(url: url)

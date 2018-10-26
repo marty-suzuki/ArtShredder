@@ -20,6 +20,9 @@ final class ViewController: UIViewController {
                 return
             }
             selectImageButton.setImage(image, for: .normal)
+            selectImageButton.imageView?.contentMode = .scaleAspectFit
+            selectImageButton.contentHorizontalAlignment = .fill
+            selectImageButton.contentVerticalAlignment = .fill
         }
     }
     @IBOutlet private(set) weak var saveImageButton: UIButton! {
@@ -47,12 +50,6 @@ final class ViewController: UIViewController {
     @IBOutlet private(set) weak var imageView: UIImageView!
     @IBOutlet private(set) weak var imageViewCenterYConstraint: NSLayoutConstraint!
     @IBOutlet private(set) weak var containerView: UIView!
-    @IBOutlet private(set) weak var linkButtonCoutainer: UIView! {
-        didSet {
-            linkButtonCoutainer.layer.cornerRadius = 10
-            linkButtonCoutainer.layer.masksToBounds = true
-        }
-    }
     @IBOutlet private(set) weak var bannerContainerView: UIView! {
         didSet {
             bannerView.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +74,7 @@ final class ViewController: UIViewController {
     }
     private lazy var bannerView: GADBannerView = {
         let view = GADBannerView(adSize: kGADAdSizeBanner)
-        view.adUnitID = AdMobConfig.make().bannerAdID
+        view.adUnitID = AdMobConfig.make().banner.normalBottomAdID
         view.rootViewController = self
         view.delegate = self
         view.load(GADRequest())
@@ -88,7 +85,8 @@ final class ViewController: UIViewController {
     private var images: [UIImage] = []
     private var interstitialReferer: InterstitialReferer?
 
-    private lazy var interstitial = createAndLoadInterstitial()
+    private lazy var interstitialForAR = createAndLoadInterstitial(referer: .arMode)
+    private lazy var interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -97,12 +95,20 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _ = interstitial
+        _ = interstitialForAR
+        _ = interstitialForGIF
         _ = bannerView
     }
 
-    private func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: AdMobConfig.make().interstitialAdID)
+    private func createAndLoadInterstitial(referer: InterstitialReferer) -> GADInterstitial {
+        let adUnitID: String
+        switch referer {
+        case .arMode:
+            adUnitID = AdMobConfig.make().interstitial.arButtonAdID
+        case .saveGIF:
+            adUnitID = AdMobConfig.make().interstitial.gifButtonAdID
+        }
+        let interstitial = GADInterstitial(adUnitID: adUnitID)
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
@@ -228,22 +234,22 @@ final class ViewController: UIViewController {
     }
 
     @IBAction func saveGif(_ sender: UIButton) {
-        if interstitial.isReady {
+        if interstitialForGIF.isReady {
             interstitialReferer = .saveGIF
-            interstitial.present(fromRootViewController: self)
+            interstitialForGIF.present(fromRootViewController: self)
         } else {
             createGIF()
-            interstitial = createAndLoadInterstitial()
+            interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
         }
     }
 
     @IBAction func arButtonTap(_ sender: UIButton) {
-        if interstitial.isReady {
+        if interstitialForAR.isReady {
             interstitialReferer = .arMode
-            interstitial.present(fromRootViewController: self)
+            interstitialForAR.present(fromRootViewController: self)
         } else {
             showAR()
-            interstitial = createAndLoadInterstitial()
+            interstitialForAR = createAndLoadInterstitial(referer: .arMode)
         }
     }
 
@@ -352,14 +358,17 @@ extension ViewController: GADInterstitialDelegate {
     /// Tells the delegate the interstitial had been animated off the screen.
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         print("interstitialDidDismissScreen")
-        interstitial = createAndLoadInterstitial()
+
         switch interstitialReferer {
         case .saveGIF?:
+            interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
             createGIF()
         case .arMode?:
+            interstitialForAR = createAndLoadInterstitial(referer: .arMode)
             showAR()
         case .none:
-            break
+            interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
+            interstitialForAR = createAndLoadInterstitial(referer: .arMode)
         }
         interstitialReferer = nil
     }

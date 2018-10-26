@@ -6,40 +6,20 @@
 //  Copyright © 2018年 marty-suzuki. All rights reserved.
 //
 
+import Prex
 import UIKit
 import SafariServices
 
 final class SettingViewController: UIViewController {
-    @IBOutlet private(set) weak var versionLabel: UILabel! {
-        didSet {
-            guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
-                versionLabel.text = "Version: unknown"
-                return
-            }
-            versionLabel.text = "Version: \(version)"
-        }
-    }
-
-    @IBOutlet private(set) weak var frameDescriptionLabel: UILabel! {
-        didSet {
-            let localized = LocalizedString.frameDescription
-            frameDescriptionLabel.text = String(format: localized, Const.urlString)
-        }
-    }
-    @IBOutlet private(set) weak var supportPageButton: UIButton! {
-        didSet {
-            let localized = LocalizedString.supprotTitle
-            supportPageButton.setTitle(localized, for: .normal)
-        }
-    }
+    @IBOutlet private(set) weak var versionLabel: UILabel!
+    @IBOutlet private(set) weak var frameDescriptionLabel: UILabel!
+    @IBOutlet private(set) weak var supportPageButton: UIButton!
 
     private lazy var doneButton = UIBarButtonItem(barButtonSystemItem: .done,
                                                   target: self,
                                                   action: #selector(self.doneButtonTap(_:)))
 
-    private enum Const {
-        static let urlString = "https://www.freeiconspng.com/img/24597"
-    }
+    private lazy var presenter = SettingPresenter(view: self)
 
     init() {
         super.init(nibName: "SettingViewController", bundle: nil)
@@ -53,6 +33,8 @@ final class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.leftBarButtonItem = doneButton
+
+        presenter.reflect()
     }
 
     @objc private func doneButtonTap(_ sender: UIButton) {
@@ -60,33 +42,39 @@ final class SettingViewController: UIViewController {
     }
 
     @IBAction private func openFrameWebSite(_ sender: UIButton) {
-        let url = URL(string: Const.urlString)!
-        let vc = SFSafariViewController(url: url)
-        present(vc, animated: true, completion: nil)
+        presenter.openURL(.frameWebSite)
     }
 
     @IBAction private func supportPageTap(_ sender: UIButton) {
-        let string = LocalizedString.supportURL
-        guard  let url = URL(string: string) else {
-            return
-        }
-        let vc = SFSafariViewController(url: url)
-        present(vc, animated: true, completion: nil)
+        presenter.openURL(.supportPage)
     }
 
     @IBAction private func prexTap(_ sender: UIButton) {
-        guard  let url = URL(string: "https://github.com/marty-suzuki/Prex") else {
-            return
-        }
-        let vc = SFSafariViewController(url: url)
-        present(vc, animated: true, completion: nil)
+        presenter.openURL(.prex)
     }
 
     @IBAction private func googleMobileAdsTap(_ sender: UIButton) {
-        guard  let url = URL(string: "https://cocoapods.org/pods/Google-Mobile-Ads-SDK") else {
-            return
+        presenter.openURL(.googleMobleAdsSDK)
+    }
+}
+
+extension SettingViewController: View {
+    func reflect(change: StateChange<Setting.State>) {
+        if let url = change.changedProperty(for: \.openURL)?.value {
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true, completion: nil)
         }
-        let vc = SFSafariViewController(url: url)
-        present(vc, animated: true, completion: nil)
+
+        if let text = change.changedProperty(for: \.frameDescription)?.value {
+            frameDescriptionLabel.text = text
+        }
+
+        if let title = change.changedProperty(for: \.supportTitle)?.value {
+            supportPageButton.setTitle(title, for: .normal)
+        }
+
+        if let text = change.changedProperty(for: \.version)?.value {
+            versionLabel.text = text
+        }
     }
 }

@@ -15,11 +15,11 @@
 		375D3016216D15D800D5B953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375D3015216D15D800D5B953 /* Assets.xcassets */; };
 		375D3019216D15D800D5B953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375D3017216D15D800D5B953 /* LaunchScreen.storyboard */; };
 		3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D608216FC61E003909BE /* AdMobConfig.swift */; };
-		3771D60D216FC711003909BE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
 		3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D610216FCBF7003909BE /* SettingViewController.swift */; };
 		378D64AB218371BD00908138 /* ShredderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64AA218371BD00908138 /* ShredderViewController.swift */; };
 		378D64AD2183720100908138 /* ShredderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378D64AC2183720100908138 /* ShredderViewController.xib */; };
 		378D64B02183741500908138 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378D64AF2183741500908138 /* SettingViewController.xib */; };
+		378D64B3218378E900908138 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
 		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
 		37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37BB0CD72173142700C175EB /* InfoPlist.strings */; };
 		37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A4D2175E5F700C7E693 /* ARViewController.swift */; };
@@ -121,13 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				378D64B12183779800908138 /* Resources */,
+				378D64B22183786B00908138 /* Common */,
 				378D64AE218373F800908138 /* Setting */,
-				37E47A592176EACA00C7E693 /* Extension */,
 				378D64A9218371A000908138 /* Shredder */,
 				37E47A4C2175E59C00C7E693 /* AR */,
 				375D300E216D15D700D5B953 /* AppDelegate.swift */,
-				3771D608216FC61E003909BE /* AdMobConfig.swift */,
-				3771D60C216FC711003909BE /* Secret.swift */,
 			);
 			path = ArtShredder;
 			sourceTree = "<group>";
@@ -160,6 +158,16 @@
 				37BB0CD72173142700C175EB /* InfoPlist.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		378D64B22183786B00908138 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3771D608216FC61E003909BE /* AdMobConfig.swift */,
+				3771D60C216FC711003909BE /* Secret.swift */,
+				37E47A592176EACA00C7E693 /* Extension */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		37E47A4C2175E59C00C7E693 /* AR */ = {
@@ -309,13 +317,13 @@
 				37E47A5621765E4400C7E693 /* ARShredderLayer.swift in Sources */,
 				3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */,
 				3715DEA821790B9500885E84 /* ARView.PrexComponents.swift in Sources */,
-				3771D60D216FC711003909BE /* Secret.swift in Sources */,
 				37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */,
 				3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */,
 				3715DEA62179096300885E84 /* ARViewDelegateProxy.swift in Sources */,
 				37E47A5D2176EB1000C7E693 /* Additional.swift in Sources */,
 				37E47A5F2176EE7000C7E693 /* ARShredderNode.swift in Sources */,
 				37E47A5B2176EADB00C7E693 /* UIImage.extension.swift in Sources */,
+				378D64B3218378E900908138 /* Secret.swift in Sources */,
 				378D64AB218371BD00908138 /* ShredderViewController.swift in Sources */,
 				375D300F216D15D700D5B953 /* AppDelegate.swift in Sources */,
 				3715DEA42178FF8F00885E84 /* ARPresenter.swift in Sources */,

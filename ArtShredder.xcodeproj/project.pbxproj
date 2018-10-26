@@ -120,18 +120,14 @@
 		375D300D216D15D700D5B953 /* ArtShredder */ = {
 			isa = PBXGroup;
 			children = (
+				378D64B12183779800908138 /* Resources */,
 				378D64AE218373F800908138 /* Setting */,
 				37E47A592176EACA00C7E693 /* Extension */,
 				378D64A9218371A000908138 /* Shredder */,
 				37E47A4C2175E59C00C7E693 /* AR */,
 				375D300E216D15D700D5B953 /* AppDelegate.swift */,
-				375D3015216D15D800D5B953 /* Assets.xcassets */,
-				375D3017216D15D800D5B953 /* LaunchScreen.storyboard */,
-				375D301A216D15D800D5B953 /* Info.plist */,
 				3771D608216FC61E003909BE /* AdMobConfig.swift */,
 				3771D60C216FC711003909BE /* Secret.swift */,
-				37A069A42172F1F40083873F /* Localizable.strings */,
-				37BB0CD72173142700C175EB /* InfoPlist.strings */,
 			);
 			path = ArtShredder;
 			sourceTree = "<group>";
@@ -152,6 +148,18 @@
 				378D64AF2183741500908138 /* SettingViewController.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		378D64B12183779800908138 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				375D3015216D15D800D5B953 /* Assets.xcassets */,
+				375D3017216D15D800D5B953 /* LaunchScreen.storyboard */,
+				375D301A216D15D800D5B953 /* Info.plist */,
+				37A069A42172F1F40083873F /* Localizable.strings */,
+				37BB0CD72173142700C175EB /* InfoPlist.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		37E47A4C2175E59C00C7E693 /* AR */ = {
@@ -475,7 +483,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,7 +507,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

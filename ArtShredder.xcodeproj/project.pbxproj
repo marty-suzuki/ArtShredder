@@ -20,6 +20,7 @@
 		378D64AD2183720100908138 /* ShredderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378D64AC2183720100908138 /* ShredderViewController.xib */; };
 		378D64B02183741500908138 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378D64AF2183741500908138 /* SettingViewController.xib */; };
 		378D64B3218378E900908138 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
+		378D64B521837AA400908138 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B421837AA400908138 /* LocalizedString.swift */; };
 		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
 		37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37BB0CD72173142700C175EB /* InfoPlist.strings */; };
 		37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A4D2175E5F700C7E693 /* ARViewController.swift */; };
@@ -49,6 +50,7 @@
 		378D64AA218371BD00908138 /* ShredderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderViewController.swift; sourceTree = "<group>"; };
 		378D64AC2183720100908138 /* ShredderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShredderViewController.xib; sourceTree = "<group>"; };
 		378D64AF2183741500908138 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		378D64B421837AA400908138 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		37A069A32172F1F40083873F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37A069A52172F2110083873F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37BB0CD62173142700C175EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				3771D608216FC61E003909BE /* AdMobConfig.swift */,
 				3771D60C216FC711003909BE /* Secret.swift */,
+				378D64B421837AA400908138 /* LocalizedString.swift */,
 				37E47A592176EACA00C7E693 /* Extension */,
 			);
 			path = Common;
@@ -324,6 +327,7 @@
 				37E47A5F2176EE7000C7E693 /* ARShredderNode.swift in Sources */,
 				37E47A5B2176EADB00C7E693 /* UIImage.extension.swift in Sources */,
 				378D64B3218378E900908138 /* Secret.swift in Sources */,
+				378D64B521837AA400908138 /* LocalizedString.swift in Sources */,
 				378D64AB218371BD00908138 /* ShredderViewController.swift in Sources */,
 				375D300F216D15D700D5B953 /* AppDelegate.swift in Sources */,
 				3715DEA42178FF8F00885E84 /* ARPresenter.swift in Sources */,

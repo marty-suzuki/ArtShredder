@@ -15,7 +15,7 @@ final class ShredderViewController: UIViewController {
 
     @IBOutlet private(set) weak var selectImageButton: UIButton! {
         didSet {
-            let imageName = NSLocalizedString("select_image_name", comment: "")
+            let imageName = LocalizedString.selectImageName
             guard let image = UIImage(named: imageName) else {
                 return
             }
@@ -28,20 +28,20 @@ final class ShredderViewController: UIViewController {
     @IBOutlet private(set) weak var saveImageButton: UIButton! {
         didSet {
             saveImageButton.isEnabled = false
-            let title = NSLocalizedString("save_image_button", comment: "")
+            let title = LocalizedString.saveImageButton
             saveImageButton.setTitle(title, for: .normal)
         }
     }
     @IBOutlet private(set) weak var saveGifButton: UIButton! {
         didSet {
             saveGifButton.isEnabled = false
-            let title = NSLocalizedString("save_gif_button", comment: "")
+            let title = LocalizedString.saveGIFButton
             saveGifButton.setTitle(title, for: .normal)
         }
     }
     @IBOutlet private(set) weak var arButton: UIButton! {
         didSet {
-            let title = NSLocalizedString("ar_mode_title", comment: "")
+            let title = LocalizedString.arModeTitle
             arButton.setTitle(title, for: .normal)
         }
     }
@@ -126,8 +126,8 @@ final class ShredderViewController: UIViewController {
 
     @IBAction private func selectPicture(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let title = NSLocalizedString("image_source_select_title", comment: "")
-            let message = NSLocalizedString("image_source_select_message", comment: "")
+            let title = LocalizedString.imageSourceSelectTitle
+            let message = LocalizedString.imageSourceSelectMessage
             let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
                 let rect = CGRect(x: view.center.x,
@@ -138,7 +138,7 @@ final class ShredderViewController: UIViewController {
                 alert.popoverPresentationController?.sourceView = view
             }
 
-            let cameraTitle = NSLocalizedString("image_source_select_camera", comment: "")
+            let cameraTitle = LocalizedString.imageSourceSelectCamera
             alert.addAction(UIAlertAction(title: cameraTitle, style: .default) { [weak self] _ in
                 let picker = UIImagePickerController()
                 picker.sourceType = .camera
@@ -146,7 +146,7 @@ final class ShredderViewController: UIViewController {
                 self?.present(picker, animated: true, completion: nil)
             })
 
-            let cameraRollTitle = NSLocalizedString("image_source_select_camera_roll", comment: "")
+            let cameraRollTitle = LocalizedString.imageSourceSelectCameraRoll
             alert.addAction(UIAlertAction(title: cameraRollTitle, style: .default) { [weak self] _ in
                 let picker = UIImagePickerController()
                 picker.sourceType = .photoLibrary
@@ -154,7 +154,7 @@ final class ShredderViewController: UIViewController {
                 self?.present(picker, animated: true, completion: nil)
             })
 
-            let cancelTitle = NSLocalizedString("cancel_action", comment: "")
+            let cancelTitle = LocalizedString.cancelAction
             alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
             return
@@ -199,8 +199,8 @@ final class ShredderViewController: UIViewController {
     }
 
     private func saveFinishedAlert() {
-        let title = NSLocalizedString("did_save_to_camera_roll_title", comment: "")
-        let message = NSLocalizedString("did_save_to_camera_roll_message", comment: "")
+        let title = LocalizedString.didSaveToCameraRollTitle
+        let message = LocalizedString.didSaveToCameraRollMessage
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
             let rect = CGRect(x: view.center.x,

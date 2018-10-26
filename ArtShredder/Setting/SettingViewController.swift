@@ -22,13 +22,13 @@ final class SettingViewController: UIViewController {
 
     @IBOutlet private(set) weak var frameDescriptionLabel: UILabel! {
         didSet {
-            let localized = NSLocalizedString("frame_description", comment: "")
+            let localized = LocalizedString.frameDescription
             frameDescriptionLabel.text = String(format: localized, Const.urlString)
         }
     }
     @IBOutlet private(set) weak var supportPageButton: UIButton! {
         didSet {
-            let localized = NSLocalizedString("supprot_title", comment: "")
+            let localized = LocalizedString.supprotTitle
             supportPageButton.setTitle(localized, for: .normal)
         }
     }
@@ -66,7 +66,7 @@ final class SettingViewController: UIViewController {
     }
 
     @IBAction private func supportPageTap(_ sender: UIButton) {
-        let string = NSLocalizedString("support_url", comment: "")
+        let string = LocalizedString.supportURL
         guard  let url = URL(string: string) else {
             return
         }

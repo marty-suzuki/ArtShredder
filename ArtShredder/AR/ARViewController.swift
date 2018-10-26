@@ -39,7 +39,7 @@ final class ARViewController: UIViewController {
     }
     @IBOutlet private(set) weak var selectImageButton: UIButton! {
         didSet {
-            let title = NSLocalizedString("select_to_add_art_title", comment: "")
+            let title = LocalizedString.selectToAddArtTitle
             selectImageButton.setTitle(title, for: .normal)
             selectImageButton.layer.borderWidth = 2
             selectImageButton.layer.borderColor = UIColor.white.cgColor
@@ -55,8 +55,7 @@ final class ARViewController: UIViewController {
     }
     @IBOutlet private(set) weak var noRecognitionLabel: UILabel! {
         didSet {
-            let title = NSLocalizedString("ar_no_recognition_text", comment: "")
-            noRecognitionLabel.text = title
+            noRecognitionLabel.text = LocalizedString.arNoRecognitionText
         }
     }
 

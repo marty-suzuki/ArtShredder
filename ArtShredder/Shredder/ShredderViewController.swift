@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  ShredderViewController.swift
 //  ArtShredder
 //
-//  Created by marty-suzuki on 2018/10/10.
+//  Created by marty-suzuki on 2018/10/27.
 //  Copyright © 2018年 marty-suzuki. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import WebKit
 import MobileCoreServices
 import GoogleMobileAds
 
-final class ViewController: UIViewController {
+final class ShredderViewController: UIViewController {
 
     @IBOutlet private(set) weak var selectImageButton: UIButton! {
         didSet {
@@ -69,7 +69,7 @@ final class ViewController: UIViewController {
                                     attribute: .centerX,
                                     multiplier: 1,
                                     constant: 0)
-            ])
+                ])
         }
     }
     private lazy var bannerView: GADBannerView = {
@@ -90,6 +90,14 @@ final class ViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+
+    init() {
+        super.init(nibName: "ShredderViewController", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -253,6 +261,13 @@ final class ViewController: UIViewController {
         }
     }
 
+    @IBAction func settingButtonTap(_ sender: UIButton) {
+        let vc = SettingViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        nc.modalTransitionStyle = .flipHorizontal
+        present(nc, animated: true, completion: nil)
+    }
+
     private func showAR() {
         let vc = ARViewController()
         vc.modalTransitionStyle = .flipHorizontal
@@ -302,7 +317,7 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ShredderViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.originalImage] as? UIImage
         imageViewCenterYConstraint.constant = 0
@@ -334,7 +349,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
 }
 
-extension ViewController: GADInterstitialDelegate {
+extension ShredderViewController: GADInterstitialDelegate {
     /// Tells the delegate an ad request succeeded.
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         print("interstitialDidReceiveAd")
@@ -380,7 +395,7 @@ extension ViewController: GADInterstitialDelegate {
     }
 }
 
-extension ViewController: GADBannerViewDelegate {
+extension ShredderViewController: GADBannerViewDelegate {
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("adViewDidReceiveAd")
@@ -415,9 +430,10 @@ extension ViewController: GADBannerViewDelegate {
     }
 }
 
-extension ViewController {
+extension ShredderViewController {
     private enum InterstitialReferer {
         case saveGIF
         case arMode
     }
 }
+

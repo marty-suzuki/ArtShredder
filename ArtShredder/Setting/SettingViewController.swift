@@ -16,7 +16,7 @@ final class SettingViewController: UIViewController {
                 versionLabel.text = "Version: unknown"
                 return
             }
-            versionLabel.text = "Version: v\(version)"
+            versionLabel.text = "Version: \(version)"
         }
     }
 
@@ -33,16 +33,32 @@ final class SettingViewController: UIViewController {
         }
     }
 
+    private lazy var doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                                  target: self,
+                                                  action: #selector(self.doneButtonTap(_:)))
+
     private enum Const {
         static let urlString = "https://www.freeiconspng.com/img/24597"
+    }
+
+    init() {
+        super.init(nibName: "SettingViewController", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = doneButton
     }
-    
+
+    @objc private func doneButtonTap(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+
     @IBAction private func openFrameWebSite(_ sender: UIButton) {
         let url = URL(string: Const.urlString)!
         let vc = SFSafariViewController(url: url)

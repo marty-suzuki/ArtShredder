@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37135EC121B592EB00A0B9AA /* GIFMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37135EC021B592EB00A0B9AA /* GIFMaker.swift */; };
+		37135EC321B5946400A0B9AA /* ScreenToGIFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37135EC221B5946400A0B9AA /* ScreenToGIFManager.swift */; };
 		3715DEA22178FF0400885E84 /* Prex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715DEA12178FF0400885E84 /* Prex.framework */; };
 		3715DEA42178FF8F00885E84 /* ARPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715DEA32178FF8F00885E84 /* ARPresenter.swift */; };
 		3715DEA62179096300885E84 /* ARViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715DEA52179096300885E84 /* ARViewDelegateProxy.swift */; };
@@ -25,6 +27,9 @@
 		378D64B92183829500908138 /* SettingView.PrexComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B82183829500908138 /* SettingView.PrexComponets.swift */; };
 		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
 		37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37BB0CD72173142700C175EB /* InfoPlist.strings */; };
+		37D45B0C21B43CDA00B531C9 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D45B0B21B43CDA00B531C9 /* ScreenRecorder.swift */; };
+		37D45B0E21B43EE800B531C9 /* ScreenCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D45B0D21B43EE800B531C9 /* ScreenCaptureManager.swift */; };
+		37D45B1221B450CE00B531C9 /* DispatchQueue.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D45B1121B450CE00B531C9 /* DispatchQueue.extension.swift */; };
 		37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A4D2175E5F700C7E693 /* ARViewController.swift */; };
 		37E47A5621765E4400C7E693 /* ARShredderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A5521765E4400C7E693 /* ARShredderLayer.swift */; };
 		37E47A5821767F5F00C7E693 /* ARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E47A5721767F5F00C7E693 /* ARViewController.xib */; };
@@ -37,6 +42,8 @@
 /* Begin PBXFileReference section */
 		1EF19B87DCFEB853B83C3FB3 /* Pods-Shuretta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.release.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.release.xcconfig"; sourceTree = "<group>"; };
 		35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtShredder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37135EC021B592EB00A0B9AA /* GIFMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFMaker.swift; sourceTree = "<group>"; };
+		37135EC221B5946400A0B9AA /* ScreenToGIFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenToGIFManager.swift; sourceTree = "<group>"; };
 		3715DEA12178FF0400885E84 /* Prex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Prex.framework; path = Carthage/Build/iOS/Prex.framework; sourceTree = "<group>"; };
 		3715DEA32178FF8F00885E84 /* ARPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPresenter.swift; sourceTree = "<group>"; };
 		3715DEA52179096300885E84 /* ARViewDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewDelegateProxy.swift; sourceTree = "<group>"; };
@@ -59,6 +66,9 @@
 		37A069A52172F2110083873F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37BB0CD62173142700C175EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37BB0CD82173142900C175EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37D45B0B21B43CDA00B531C9 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
+		37D45B0D21B43EE800B531C9 /* ScreenCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureManager.swift; sourceTree = "<group>"; };
+		37D45B1121B450CE00B531C9 /* DispatchQueue.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.extension.swift; sourceTree = "<group>"; };
 		37E47A4D2175E5F700C7E693 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		37E47A5521765E4400C7E693 /* ARShredderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARShredderLayer.swift; sourceTree = "<group>"; };
 		37E47A5721767F5F00C7E693 /* ARViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARViewController.xib; sourceTree = "<group>"; };
@@ -174,6 +184,10 @@
 				3771D608216FC61E003909BE /* AdMobConfig.swift */,
 				3771D60C216FC711003909BE /* Secret.swift */,
 				378D64B421837AA400908138 /* LocalizedString.swift */,
+				37D45B0B21B43CDA00B531C9 /* ScreenRecorder.swift */,
+				37D45B0D21B43EE800B531C9 /* ScreenCaptureManager.swift */,
+				37135EC021B592EB00A0B9AA /* GIFMaker.swift */,
+				37135EC221B5946400A0B9AA /* ScreenToGIFManager.swift */,
 				37E47A592176EACA00C7E693 /* Extension */,
 			);
 			path = Common;
@@ -198,6 +212,7 @@
 			children = (
 				37E47A5C2176EB1000C7E693 /* Additional.swift */,
 				37E47A5A2176EADB00C7E693 /* UIImage.extension.swift */,
+				37D45B1121B450CE00B531C9 /* DispatchQueue.extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -323,11 +338,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D45B1221B450CE00B531C9 /* DispatchQueue.extension.swift in Sources */,
 				37E47A5621765E4400C7E693 /* ARShredderLayer.swift in Sources */,
 				3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */,
+				37D45B0E21B43EE800B531C9 /* ScreenCaptureManager.swift in Sources */,
 				3715DEA821790B9500885E84 /* ARView.PrexComponents.swift in Sources */,
 				37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */,
 				3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */,
+				37135EC321B5946400A0B9AA /* ScreenToGIFManager.swift in Sources */,
+				37135EC121B592EB00A0B9AA /* GIFMaker.swift in Sources */,
 				3715DEA62179096300885E84 /* ARViewDelegateProxy.swift in Sources */,
 				37E47A5D2176EB1000C7E693 /* Additional.swift in Sources */,
 				37E47A5F2176EE7000C7E693 /* ARShredderNode.swift in Sources */,
@@ -338,6 +357,7 @@
 				378D64B521837AA400908138 /* LocalizedString.swift in Sources */,
 				378D64AB218371BD00908138 /* ShredderViewController.swift in Sources */,
 				375D300F216D15D700D5B953 /* AppDelegate.swift in Sources */,
+				37D45B0C21B43CDA00B531C9 /* ScreenRecorder.swift in Sources */,
 				3715DEA42178FF8F00885E84 /* ARPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

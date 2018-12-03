@@ -8,10 +8,7 @@
 
 import UIKit
 
-
-
 extension UIImage: AdditionalCompatible {}
-
 
 extension Additional where Base: UIImage {
     func fixedOrientation() -> UIImage {

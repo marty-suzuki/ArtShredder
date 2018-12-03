@@ -46,6 +46,13 @@ final class ShredderViewController: UIViewController {
         }
     }
 
+    @IBOutlet private(set) weak var indicatorView: UIActivityIndicatorView! {
+        didSet {
+            indicatorView.isHidden = true
+            indicatorView.stopAnimating()
+        }
+    }
+
     @IBOutlet private(set) weak var bottomView: UIView!
     @IBOutlet private(set) weak var imageView: UIImageView!
     @IBOutlet private(set) weak var imageViewCenterYConstraint: NSLayoutConstraint!
@@ -81,12 +88,12 @@ final class ShredderViewController: UIViewController {
         return view
     }()
 
-    private var timer: Timer?
-    private var images: [UIImage] = []
     private var interstitialReferer: InterstitialReferer?
 
     private lazy var interstitialForAR = createAndLoadInterstitial(referer: .arMode)
     private lazy var interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
+
+    private let screenToGIFManager = ScreenToGIFManager()
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -231,16 +238,6 @@ final class ShredderViewController: UIViewController {
         return image
     }
 
-    @objc private func timerHandler(_ timer: Timer) {
-        DispatchQueue.main.async {
-            let size = self.view.bounds.size
-            guard let image = self.snapshot(size: CGSize(width: size.width / 2, height: size.height / 2), scale: 1.0) else {
-                return
-            }
-            self.images += [image]
-        }
-    }
-
     @IBAction func saveGif(_ sender: UIButton) {
         if interstitialForGIF.isReady {
             interstitialReferer = .saveGIF
@@ -275,45 +272,36 @@ final class ShredderViewController: UIViewController {
     }
 
     private func createGIF() {
-        let url = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("sample.gif")!
-        guard let destination = CGImageDestinationCreateWithURL(url as CFURL, kUTTypeGIF, images.count, nil) else {
-            // CGImageDestinationの作成に失敗
-            return
-        }
 
-        let properties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: 0]]
-        CGImageDestinationSetProperties(destination, properties as CFDictionary)
-
-        let frameProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFDelayTime as String: 0.2]]
-        for image in images {
-            if let cgImage = image.cgImage {
-                CGImageDestinationAddImage(destination, cgImage, frameProperties as CFDictionary)
-            }
-        }
-
-        guard CGImageDestinationFinalize(destination) else {
-            // GIF生成に失敗
-            return
-        }
-
-        let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-            let rect = CGRect(x: view.center.x,
-                              y: containerView.frame.minY,
-                              width: view.bounds.size.width / 2,
-                              height: view.bounds.size.height / 2)
-            controller.popoverPresentationController?.sourceRect = rect
-            controller.popoverPresentationController?.sourceView = view
-        }
-        controller.completionWithItemsHandler = { [weak self] activityType, isCompleted, returnedItems, error in
-            guard isCompleted && activityType == .saveToCameraRoll else {
-                return
-            }
+        screenToGIFManager.didCreateGIFWithURL = { [weak self] url in
             DispatchQueue.main.async {
-                self?.saveFinishedAlert()
+                guard let me = self, let url = url else {
+                    return
+                }
+
+                let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                let traitCollection = me.traitCollection
+                if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+                    let rect = CGRect(x: me.view.center.x,
+                                      y: me.containerView.frame.minY,
+                                      width: me.view.bounds.size.width / 2,
+                                      height: me.view.bounds.size.height / 2)
+                    controller.popoverPresentationController?.sourceRect = rect
+                    controller.popoverPresentationController?.sourceView = me.view
+                }
+                controller.completionWithItemsHandler = { activityType, isCompleted, returnedItems, error in
+                    guard isCompleted && activityType == .saveToCameraRoll else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self?.saveFinishedAlert()
+                    }
+                }
+                me.present(controller, animated: true, completion: nil)
             }
         }
-        present(controller, animated: true, completion: nil)
+
+        screenToGIFManager.createGIF()
     }
 }
 
@@ -326,23 +314,33 @@ extension ShredderViewController: UIImagePickerControllerDelegate, UINavigationC
         saveGifButton.isEnabled = false
 
         dismiss(animated: true) { [weak self] in
-            guard let me = self else { return }
 
-            me.containerView.layoutIfNeeded()
-            me.imageViewCenterYConstraint.constant = me.bottomView.frame.size.height
+            self?.screenToGIFManager.startCapture() { _ in
 
-            me.images.removeAll()
-            me.timer = Timer.scheduledTimer(timeInterval: 0.05, target: me, selector: #selector(me.timerHandler(_:)), userInfo: nil, repeats: true)
+                DispatchQueue.main.async {
 
-            UIView.animate(withDuration: 5, delay: 2, options: .curveEaseInOut, animations: {
-                me.containerView.layoutIfNeeded()
-            }) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                    me.timer?.invalidate()
-                    me.timer = nil
-                    me.selectImageButton.isEnabled = true
-                    me.saveImageButton.isEnabled = true
-                    me.saveGifButton.isEnabled = true
+                    guard let me = self else {
+                        return
+                    }
+
+                    me.containerView.layoutIfNeeded()
+                    me.imageViewCenterYConstraint.constant = me.bottomView.frame.size.height
+
+                    me.indicatorView.isHidden = false
+                    me.indicatorView.startAnimating()
+
+                    UIView.animate(withDuration: 5, delay: 2, options: .curveEaseInOut, animations: {
+                        me.containerView.layoutIfNeeded()
+                    }) { _ in
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                            me.screenToGIFManager.stopCapture()
+                            me.indicatorView.isHidden = true
+                            me.indicatorView.stopAnimating()
+                            me.selectImageButton.isEnabled = true
+                            me.saveImageButton.isEnabled = true
+                            me.saveGifButton.isEnabled = true
+                        }
+                    }
                 }
             }
         }

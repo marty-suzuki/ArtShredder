@@ -1,5 +1,5 @@
 //
-//  ARViewDelegateProxy.swift
+//  ARViewDelegateHandler.swift
 //  ArtShredder
 //
 //  Created by marty-suzuki on 2018/10/19.
@@ -11,7 +11,7 @@ import GoogleMobileAds
 import SceneKit
 import UIKit
 
-final class ARViewDelegateProxy: NSObject {
+final class ARViewDelegateHandler: NSObject {
     private let presenter: ARPresenter
     private let pointOfView: () -> SCNNode?
 
@@ -21,7 +21,7 @@ final class ARViewDelegateProxy: NSObject {
     }
 }
 
-extension ARViewDelegateProxy: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ARViewDelegateHandler: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         presenter.setImage(info[.originalImage] as? UIImage)
 
@@ -31,7 +31,7 @@ extension ARViewDelegateProxy: UIImagePickerControllerDelegate, UINavigationCont
     }
 }
 
-extension ARViewDelegateProxy: ARSCNViewDelegate {
+extension ARViewDelegateHandler: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         let semaphore = DispatchSemaphore(value: 1)
         DispatchQueue.main.async {
@@ -49,7 +49,7 @@ extension ARViewDelegateProxy: ARSCNViewDelegate {
     }
 }
 
-extension ARViewDelegateProxy: GADBannerViewDelegate {
+extension ARViewDelegateHandler: GADBannerViewDelegate {
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("adViewDidReceiveAd")

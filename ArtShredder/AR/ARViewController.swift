@@ -69,8 +69,8 @@ final class ARViewController: UIViewController {
     }()
 
     private lazy var presenter = ARPresenter(view: self)
-    private lazy var delegateProxy = ARViewDelegateProxy(presenter: presenter,
-                                                         pointOfView: { [weak self] in self?.sceneView.pointOfView })
+    private lazy var delegateHandler = ARViewDelegateHandler(presenter: presenter,
+                                                             pointOfView: { [weak self] in self?.sceneView.pointOfView })
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -89,8 +89,8 @@ final class ARViewController: UIViewController {
 
         presenter.reflect()
 
-        bannerView.delegate = delegateProxy
-        sceneView.delegate = delegateProxy
+        bannerView.delegate = delegateHandler
+        sceneView.delegate = delegateHandler
         sceneView.scene = SCNScene()
         sceneView.debugOptions = .showFeaturePoints
 
@@ -119,7 +119,7 @@ final class ARViewController: UIViewController {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let picker = UIImagePickerController()
             picker.sourceType = .photoLibrary
-            picker.delegate = delegateProxy
+            picker.delegate = delegateHandler
             picker.modalPresentationStyle = .overFullScreen
             present(picker, animated: true, completion: nil)
         }

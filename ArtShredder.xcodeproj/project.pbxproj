@@ -25,6 +25,9 @@
 		378D64B521837AA400908138 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B421837AA400908138 /* LocalizedString.swift */; };
 		378D64B721837E0800908138 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B621837E0800908138 /* SettingPresenter.swift */; };
 		378D64B92183829500908138 /* SettingView.PrexComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B82183829500908138 /* SettingView.PrexComponets.swift */; };
+		37915EAD21B982650067DBED /* ShredderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37915EAC21B982650067DBED /* ShredderPresenter.swift */; };
+		37915EAF21B9827A0067DBED /* ShredderView.PrexComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37915EAE21B9827A0067DBED /* ShredderView.PrexComponents.swift */; };
+		37915EB121B994300067DBED /* ShredderViewDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37915EB021B994300067DBED /* ShredderViewDelegateHandler.swift */; };
 		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
 		37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37BB0CD72173142700C175EB /* InfoPlist.strings */; };
 		37D45B0C21B43CDA00B531C9 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D45B0B21B43CDA00B531C9 /* ScreenRecorder.swift */; };
@@ -62,6 +65,9 @@
 		378D64B421837AA400908138 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		378D64B621837E0800908138 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		378D64B82183829500908138 /* SettingView.PrexComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.PrexComponets.swift; sourceTree = "<group>"; };
+		37915EAC21B982650067DBED /* ShredderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderPresenter.swift; sourceTree = "<group>"; };
+		37915EAE21B9827A0067DBED /* ShredderView.PrexComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderView.PrexComponents.swift; sourceTree = "<group>"; };
+		37915EB021B994300067DBED /* ShredderViewDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderViewDelegateHandler.swift; sourceTree = "<group>"; };
 		37A069A32172F1F40083873F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37A069A52172F2110083873F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37BB0CD62173142700C175EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -151,6 +157,9 @@
 			children = (
 				378D64AA218371BD00908138 /* ShredderViewController.swift */,
 				378D64AC2183720100908138 /* ShredderViewController.xib */,
+				37915EAC21B982650067DBED /* ShredderPresenter.swift */,
+				37915EAE21B9827A0067DBED /* ShredderView.PrexComponents.swift */,
+				37915EB021B994300067DBED /* ShredderViewDelegateHandler.swift */,
 			);
 			path = Shredder;
 			sourceTree = "<group>";
@@ -357,8 +366,11 @@
 				378D64B521837AA400908138 /* LocalizedString.swift in Sources */,
 				378D64AB218371BD00908138 /* ShredderViewController.swift in Sources */,
 				375D300F216D15D700D5B953 /* AppDelegate.swift in Sources */,
+				37915EB121B994300067DBED /* ShredderViewDelegateHandler.swift in Sources */,
 				37D45B0C21B43CDA00B531C9 /* ScreenRecorder.swift in Sources */,
 				3715DEA42178FF8F00885E84 /* ARPresenter.swift in Sources */,
+				37915EAD21B982650067DBED /* ShredderPresenter.swift in Sources */,
+				37915EAF21B9827A0067DBED /* ShredderView.PrexComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

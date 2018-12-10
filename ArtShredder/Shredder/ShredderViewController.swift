@@ -6,6 +6,7 @@
 //  Copyright © 2018年 marty-suzuki. All rights reserved.
 //
 
+import Prex
 import UIKit
 import WebKit
 import MobileCoreServices
@@ -83,17 +84,13 @@ final class ShredderViewController: UIViewController {
         let view = GADBannerView(adSize: kGADAdSizeBanner)
         view.adUnitID = AdMobConfig.make().banner.normalBottomAdID
         view.rootViewController = self
-        view.delegate = self
+        view.delegate = delegateHandler
         view.load(GADRequest())
         return view
     }()
 
-    private var interstitialReferer: InterstitialReferer?
-
-    private lazy var interstitialForAR = createAndLoadInterstitial(referer: .arMode)
-    private lazy var interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
-
-    private let screenToGIFManager = ScreenToGIFManager()
+    private lazy var presenter = ShredderPresenter(view: self)
+    private lazy var delegateHandler = ShredderViewDelegateHandler(presenter: self.presenter)
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -110,23 +107,9 @@ final class ShredderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _ = interstitialForAR
-        _ = interstitialForGIF
+        presenter.createAndLoadInterstitial(referer: .arMode, delegate: delegateHandler)
+        presenter.createAndLoadInterstitial(referer: .saveGIF, delegate: delegateHandler)
         _ = bannerView
-    }
-
-    private func createAndLoadInterstitial(referer: InterstitialReferer) -> GADInterstitial {
-        let adUnitID: String
-        switch referer {
-        case .arMode:
-            adUnitID = AdMobConfig.make().interstitial.arButtonAdID
-        case .saveGIF:
-            adUnitID = AdMobConfig.make().interstitial.gifButtonAdID
-        }
-        let interstitial = GADInterstitial(adUnitID: adUnitID)
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
-        return interstitial
     }
 
     @IBAction private func returnToMe(segue: UIStoryboardSegue) {}
@@ -149,7 +132,7 @@ final class ShredderViewController: UIViewController {
             alert.addAction(UIAlertAction(title: cameraTitle, style: .default) { [weak self] _ in
                 let picker = UIImagePickerController()
                 picker.sourceType = .camera
-                picker.delegate = self
+                picker.delegate = self?.delegateHandler
                 self?.present(picker, animated: true, completion: nil)
             })
 
@@ -157,7 +140,7 @@ final class ShredderViewController: UIViewController {
             alert.addAction(UIAlertAction(title: cameraRollTitle, style: .default) { [weak self] _ in
                 let picker = UIImagePickerController()
                 picker.sourceType = .photoLibrary
-                picker.delegate = self
+                picker.delegate = self?.delegateHandler
                 self?.present(picker, animated: true, completion: nil)
             })
 
@@ -169,7 +152,7 @@ final class ShredderViewController: UIViewController {
 
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
-        picker.delegate = self
+        picker.delegate = delegateHandler
         present(picker, animated: true, completion: nil)
     }
 
@@ -239,22 +222,20 @@ final class ShredderViewController: UIViewController {
     }
 
     @IBAction func saveGif(_ sender: UIButton) {
-        if interstitialForGIF.isReady {
-            interstitialReferer = .saveGIF
-            interstitialForGIF.present(fromRootViewController: self)
+        if let interstitial = presenter.state.interstitialForGIF, interstitial.isReady {
+            presenter.setInterstitial(interstitial, referer: .saveGIF)
         } else {
-            createGIF()
-            interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
+            presenter.createGIF()
+            presenter.createAndLoadInterstitial(referer: .saveGIF, delegate: delegateHandler)
         }
     }
 
     @IBAction func arButtonTap(_ sender: UIButton) {
-        if interstitialForAR.isReady {
-            interstitialReferer = .arMode
-            interstitialForAR.present(fromRootViewController: self)
+        if let interstitial = presenter.state.interstitialForAR, interstitial.isReady {
+            presenter.setInterstitial(interstitial, referer: .arMode)
         } else {
-            showAR()
-            interstitialForAR = createAndLoadInterstitial(referer: .arMode)
+            presenter.showAR()
+            presenter.createAndLoadInterstitial(referer: .arMode, delegate: delegateHandler)
         }
     }
 
@@ -264,174 +245,73 @@ final class ShredderViewController: UIViewController {
         nc.modalTransitionStyle = .flipHorizontal
         present(nc, animated: true, completion: nil)
     }
+}
 
-    private func showAR() {
-        let vc = ARViewController()
-        vc.modalTransitionStyle = .flipHorizontal
-        present(vc, animated: true, completion: nil)
-    }
-
-    private func createGIF() {
-
-        screenToGIFManager.didCreateGIFWithURL = { [weak self] url in
-            DispatchQueue.main.async {
-                guard let me = self, let url = url else {
+extension ShredderViewController: View {
+    func reflect(change: StateChange<Shredder.State>) {
+        
+        if let url = change.changedProperty(for: \.gifURL)?.value {
+            let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+            if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+                let rect = CGRect(x: view.center.x,
+                                  y: containerView.frame.minY,
+                                  width: view.bounds.size.width / 2,
+                                  height: view.bounds.size.height / 2)
+                controller.popoverPresentationController?.sourceRect = rect
+                controller.popoverPresentationController?.sourceView = view
+            }
+            controller.completionWithItemsHandler = { activityType, isCompleted, returnedItems, error in
+                guard isCompleted && activityType == .saveToCameraRoll else {
                     return
                 }
-
-                let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-                let traitCollection = me.traitCollection
-                if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-                    let rect = CGRect(x: me.view.center.x,
-                                      y: me.containerView.frame.minY,
-                                      width: me.view.bounds.size.width / 2,
-                                      height: me.view.bounds.size.height / 2)
-                    controller.popoverPresentationController?.sourceRect = rect
-                    controller.popoverPresentationController?.sourceView = me.view
-                }
-                controller.completionWithItemsHandler = { activityType, isCompleted, returnedItems, error in
-                    guard isCompleted && activityType == .saveToCameraRoll else {
-                        return
-                    }
-                    DispatchQueue.main.async {
-                        self?.saveFinishedAlert()
-                    }
-                }
-                me.present(controller, animated: true, completion: nil)
-            }
-        }
-
-        screenToGIFManager.createGIF()
-    }
-}
-
-extension ShredderViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageView.image = info[.originalImage] as? UIImage
-        imageViewCenterYConstraint.constant = 0
-        selectImageButton.isEnabled = false
-        saveImageButton.isEnabled = false
-        saveGifButton.isEnabled = false
-
-        dismiss(animated: true) { [weak self] in
-
-            self?.screenToGIFManager.startCapture() { _ in
-
                 DispatchQueue.main.async {
-
-                    guard let me = self else {
-                        return
-                    }
-
-                    me.containerView.layoutIfNeeded()
-                    me.imageViewCenterYConstraint.constant = me.bottomView.frame.size.height
-
-                    me.indicatorView.isHidden = false
-                    me.indicatorView.startAnimating()
-
-                    UIView.animate(withDuration: 5, delay: 2, options: .curveEaseInOut, animations: {
-                        me.containerView.layoutIfNeeded()
-                    }) { _ in
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                            me.screenToGIFManager.stopCapture()
-                            me.indicatorView.isHidden = true
-                            me.indicatorView.stopAnimating()
-                            me.selectImageButton.isEnabled = true
-                            me.saveImageButton.isEnabled = true
-                            me.saveGifButton.isEnabled = true
-                        }
-                    }
+                    self.saveFinishedAlert()
                 }
+            }
+            present(controller, animated: true, completion: nil)
+        }
+
+        if change.changedProperty(for: \.isCapturing)?.value == true {
+            containerView.layoutIfNeeded()
+            imageViewCenterYConstraint.constant = bottomView.frame.size.height
+
+            indicatorView.isHidden = false
+            indicatorView.startAnimating()
+
+            UIView.animate(withDuration: 5, delay: 2, options: .curveEaseInOut, animations: {
+                self.containerView.layoutIfNeeded()
+            }) { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                    self.presenter.stopCapture()
+                    self.indicatorView.isHidden = true
+                    self.indicatorView.stopAnimating()
+                    self.selectImageButton.isEnabled = true
+                    self.saveImageButton.isEnabled = true
+                    self.saveGifButton.isEnabled = true
+                }
+            }
+        }
+
+        if let interstitial = change.changedProperty(for: \.interstitial)?.value {
+            interstitial.rawValue.present(fromRootViewController: self)
+        }
+
+        if change.changedProperty(for: \.shouldShowAR)?.value == true {
+            let vc = ARViewController()
+            vc.modalTransitionStyle = .flipHorizontal
+            present(vc, animated: true, completion: nil)
+        }
+
+        if let image = change.changedProperty(for: \.shouldPrepareAnimationWithImage)?.value {
+            imageView.image = image
+            imageViewCenterYConstraint.constant = 0
+            selectImageButton.isEnabled = false
+            saveImageButton.isEnabled = false
+            saveGifButton.isEnabled = false
+
+            dismiss(animated: true) { [weak self] in
+                self?.presenter.startCapture()
             }
         }
     }
 }
-
-extension ShredderViewController: GADInterstitialDelegate {
-    /// Tells the delegate an ad request succeeded.
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        print("interstitialDidReceiveAd")
-    }
-
-    /// Tells the delegate an ad request failed.
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-
-    /// Tells the delegate that an interstitial will be presented.
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
-        print("interstitialWillPresentScreen")
-    }
-
-    /// Tells the delegate the interstitial is to be animated off the screen.
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        print("interstitialWillDismissScreen")
-    }
-
-    /// Tells the delegate the interstitial had been animated off the screen.
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        print("interstitialDidDismissScreen")
-
-        switch interstitialReferer {
-        case .saveGIF?:
-            interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
-            createGIF()
-        case .arMode?:
-            interstitialForAR = createAndLoadInterstitial(referer: .arMode)
-            showAR()
-        case .none:
-            interstitialForGIF = createAndLoadInterstitial(referer: .saveGIF)
-            interstitialForAR = createAndLoadInterstitial(referer: .arMode)
-        }
-        interstitialReferer = nil
-    }
-
-    /// Tells the delegate that a user click will open another app
-    /// (such as the App Store), backgrounding the current app.
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-        print("interstitialWillLeaveApplication")
-    }
-}
-
-extension ShredderViewController: GADBannerViewDelegate {
-    /// Tells the delegate an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("adViewDidReceiveAd")
-    }
-
-    /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-
-    /// Tells the delegate that a full-screen view will be presented in response
-    /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("adViewWillPresentScreen")
-    }
-
-    /// Tells the delegate that the full-screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewWillDismissScreen")
-    }
-
-    /// Tells the delegate that the full-screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewDidDismissScreen")
-    }
-
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
-    }
-}
-
-extension ShredderViewController {
-    private enum InterstitialReferer {
-        case saveGIF
-        case arMode
-    }
-}
-

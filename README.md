@@ -25,6 +25,10 @@ ArtShredder reproduces Banksy shredder in iOS Devices.
 
 ## Usage
 
+```
+$ make bootstrap
+```
+
 ## Requirements
 
 - Xcode 10.1

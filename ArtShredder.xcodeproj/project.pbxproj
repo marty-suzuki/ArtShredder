@@ -7,20 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37135EC121B592EB00A0B9AA /* GIFMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37135EC021B592EB00A0B9AA /* GIFMaker.swift */; };
+		37135EC321B5946400A0B9AA /* ScreenToGIFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37135EC221B5946400A0B9AA /* ScreenToGIFManager.swift */; };
 		3715DEA22178FF0400885E84 /* Prex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3715DEA12178FF0400885E84 /* Prex.framework */; };
 		3715DEA42178FF8F00885E84 /* ARPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715DEA32178FF8F00885E84 /* ARPresenter.swift */; };
-		3715DEA62179096300885E84 /* ARViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715DEA52179096300885E84 /* ARViewDelegateProxy.swift */; };
+		3715DEA62179096300885E84 /* ARViewDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715DEA52179096300885E84 /* ARViewDelegateHandler.swift */; };
 		3715DEA821790B9500885E84 /* ARView.PrexComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715DEA721790B9500885E84 /* ARView.PrexComponents.swift */; };
 		375D300F216D15D700D5B953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D300E216D15D700D5B953 /* AppDelegate.swift */; };
-		375D3011216D15D700D5B953 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D3010216D15D700D5B953 /* ViewController.swift */; };
-		375D3014216D15D700D5B953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375D3012216D15D700D5B953 /* Main.storyboard */; };
 		375D3016216D15D800D5B953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375D3015216D15D800D5B953 /* Assets.xcassets */; };
 		375D3019216D15D800D5B953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375D3017216D15D800D5B953 /* LaunchScreen.storyboard */; };
 		3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D608216FC61E003909BE /* AdMobConfig.swift */; };
-		3771D60D216FC711003909BE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
 		3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D610216FCBF7003909BE /* SettingViewController.swift */; };
+		378D64AB218371BD00908138 /* ShredderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64AA218371BD00908138 /* ShredderViewController.swift */; };
+		378D64AD2183720100908138 /* ShredderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378D64AC2183720100908138 /* ShredderViewController.xib */; };
+		378D64B02183741500908138 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378D64AF2183741500908138 /* SettingViewController.xib */; };
+		378D64B3218378E900908138 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771D60C216FC711003909BE /* Secret.swift */; };
+		378D64B521837AA400908138 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B421837AA400908138 /* LocalizedString.swift */; };
+		378D64B721837E0800908138 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B621837E0800908138 /* SettingPresenter.swift */; };
+		378D64B92183829500908138 /* SettingView.PrexComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378D64B82183829500908138 /* SettingView.PrexComponets.swift */; };
+		37915EAD21B982650067DBED /* ShredderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37915EAC21B982650067DBED /* ShredderPresenter.swift */; };
+		37915EAF21B9827A0067DBED /* ShredderView.PrexComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37915EAE21B9827A0067DBED /* ShredderView.PrexComponents.swift */; };
+		37915EB121B994300067DBED /* ShredderViewDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37915EB021B994300067DBED /* ShredderViewDelegateHandler.swift */; };
 		37A069A22172F1F40083873F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A069A42172F1F40083873F /* Localizable.strings */; };
 		37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37BB0CD72173142700C175EB /* InfoPlist.strings */; };
+		37D45B0C21B43CDA00B531C9 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D45B0B21B43CDA00B531C9 /* ScreenRecorder.swift */; };
+		37D45B0E21B43EE800B531C9 /* ScreenCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D45B0D21B43EE800B531C9 /* ScreenCaptureManager.swift */; };
+		37D45B1221B450CE00B531C9 /* DispatchQueue.extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D45B1121B450CE00B531C9 /* DispatchQueue.extension.swift */; };
 		37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A4D2175E5F700C7E693 /* ARViewController.swift */; };
 		37E47A5621765E4400C7E693 /* ARShredderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E47A5521765E4400C7E693 /* ARShredderLayer.swift */; };
 		37E47A5821767F5F00C7E693 /* ARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E47A5721767F5F00C7E693 /* ARViewController.xib */; };
@@ -33,24 +45,36 @@
 /* Begin PBXFileReference section */
 		1EF19B87DCFEB853B83C3FB3 /* Pods-Shuretta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shuretta.release.xcconfig"; path = "Target Support Files/Pods-Shuretta/Pods-Shuretta.release.xcconfig"; sourceTree = "<group>"; };
 		35DD7BD236D6A68D7E549A88 /* Pods_ArtShredder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtShredder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37135EC021B592EB00A0B9AA /* GIFMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFMaker.swift; sourceTree = "<group>"; };
+		37135EC221B5946400A0B9AA /* ScreenToGIFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenToGIFManager.swift; sourceTree = "<group>"; };
 		3715DEA12178FF0400885E84 /* Prex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Prex.framework; path = Carthage/Build/iOS/Prex.framework; sourceTree = "<group>"; };
 		3715DEA32178FF8F00885E84 /* ARPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPresenter.swift; sourceTree = "<group>"; };
-		3715DEA52179096300885E84 /* ARViewDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewDelegateProxy.swift; sourceTree = "<group>"; };
+		3715DEA52179096300885E84 /* ARViewDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewDelegateHandler.swift; sourceTree = "<group>"; };
 		3715DEA721790B9500885E84 /* ARView.PrexComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.PrexComponents.swift; sourceTree = "<group>"; };
 		375D300B216D15D700D5B953 /* ArtShredder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtShredder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375D300E216D15D700D5B953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		375D3010216D15D700D5B953 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		375D3013216D15D700D5B953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		375D3015216D15D800D5B953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		375D3018216D15D800D5B953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		375D301A216D15D800D5B953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3771D608216FC61E003909BE /* AdMobConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobConfig.swift; sourceTree = "<group>"; };
 		3771D60C216FC711003909BE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		3771D610216FCBF7003909BE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		378D64AA218371BD00908138 /* ShredderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderViewController.swift; sourceTree = "<group>"; };
+		378D64AC2183720100908138 /* ShredderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShredderViewController.xib; sourceTree = "<group>"; };
+		378D64AF2183741500908138 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		378D64B421837AA400908138 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		378D64B621837E0800908138 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		378D64B82183829500908138 /* SettingView.PrexComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.PrexComponets.swift; sourceTree = "<group>"; };
+		37915EAC21B982650067DBED /* ShredderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderPresenter.swift; sourceTree = "<group>"; };
+		37915EAE21B9827A0067DBED /* ShredderView.PrexComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderView.PrexComponents.swift; sourceTree = "<group>"; };
+		37915EB021B994300067DBED /* ShredderViewDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShredderViewDelegateHandler.swift; sourceTree = "<group>"; };
 		37A069A32172F1F40083873F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37A069A52172F2110083873F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37BB0CD62173142700C175EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37BB0CD82173142900C175EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37D45B0B21B43CDA00B531C9 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
+		37D45B0D21B43EE800B531C9 /* ScreenCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureManager.swift; sourceTree = "<group>"; };
+		37D45B1121B450CE00B531C9 /* DispatchQueue.extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.extension.swift; sourceTree = "<group>"; };
 		37E47A4D2175E5F700C7E693 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		37E47A5521765E4400C7E693 /* ARShredderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARShredderLayer.swift; sourceTree = "<group>"; };
 		37E47A5721767F5F00C7E693 /* ARViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARViewController.xib; sourceTree = "<group>"; };
@@ -118,21 +142,64 @@
 		375D300D216D15D700D5B953 /* ArtShredder */ = {
 			isa = PBXGroup;
 			children = (
-				37E47A592176EACA00C7E693 /* Extension */,
+				378D64B12183779800908138 /* Resources */,
+				378D64B22183786B00908138 /* Common */,
+				378D64AE218373F800908138 /* Setting */,
+				378D64A9218371A000908138 /* Shredder */,
 				37E47A4C2175E59C00C7E693 /* AR */,
 				375D300E216D15D700D5B953 /* AppDelegate.swift */,
-				375D3010216D15D700D5B953 /* ViewController.swift */,
-				375D3012216D15D700D5B953 /* Main.storyboard */,
+			);
+			path = ArtShredder;
+			sourceTree = "<group>";
+		};
+		378D64A9218371A000908138 /* Shredder */ = {
+			isa = PBXGroup;
+			children = (
+				378D64AA218371BD00908138 /* ShredderViewController.swift */,
+				378D64AC2183720100908138 /* ShredderViewController.xib */,
+				37915EAC21B982650067DBED /* ShredderPresenter.swift */,
+				37915EAE21B9827A0067DBED /* ShredderView.PrexComponents.swift */,
+				37915EB021B994300067DBED /* ShredderViewDelegateHandler.swift */,
+			);
+			path = Shredder;
+			sourceTree = "<group>";
+		};
+		378D64AE218373F800908138 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				3771D610216FCBF7003909BE /* SettingViewController.swift */,
+				378D64AF2183741500908138 /* SettingViewController.xib */,
+				378D64B621837E0800908138 /* SettingPresenter.swift */,
+				378D64B82183829500908138 /* SettingView.PrexComponets.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		378D64B12183779800908138 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				375D3015216D15D800D5B953 /* Assets.xcassets */,
 				375D3017216D15D800D5B953 /* LaunchScreen.storyboard */,
 				375D301A216D15D800D5B953 /* Info.plist */,
-				3771D608216FC61E003909BE /* AdMobConfig.swift */,
-				3771D60C216FC711003909BE /* Secret.swift */,
-				3771D610216FCBF7003909BE /* SettingViewController.swift */,
 				37A069A42172F1F40083873F /* Localizable.strings */,
 				37BB0CD72173142700C175EB /* InfoPlist.strings */,
 			);
-			path = ArtShredder;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		378D64B22183786B00908138 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3771D608216FC61E003909BE /* AdMobConfig.swift */,
+				3771D60C216FC711003909BE /* Secret.swift */,
+				378D64B421837AA400908138 /* LocalizedString.swift */,
+				37D45B0B21B43CDA00B531C9 /* ScreenRecorder.swift */,
+				37D45B0D21B43EE800B531C9 /* ScreenCaptureManager.swift */,
+				37135EC021B592EB00A0B9AA /* GIFMaker.swift */,
+				37135EC221B5946400A0B9AA /* ScreenToGIFManager.swift */,
+				37E47A592176EACA00C7E693 /* Extension */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		37E47A4C2175E59C00C7E693 /* AR */ = {
@@ -142,7 +209,7 @@
 				37E47A5721767F5F00C7E693 /* ARViewController.xib */,
 				3715DEA32178FF8F00885E84 /* ARPresenter.swift */,
 				3715DEA721790B9500885E84 /* ARView.PrexComponents.swift */,
-				3715DEA52179096300885E84 /* ARViewDelegateProxy.swift */,
+				3715DEA52179096300885E84 /* ARViewDelegateHandler.swift */,
 				37E47A5521765E4400C7E693 /* ARShredderLayer.swift */,
 				37E47A5E2176EE7000C7E693 /* ARShredderNode.swift */,
 			);
@@ -154,6 +221,7 @@
 			children = (
 				37E47A5C2176EB1000C7E693 /* Additional.swift */,
 				37E47A5A2176EADB00C7E693 /* UIImage.extension.swift */,
+				37D45B1121B450CE00B531C9 /* DispatchQueue.extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -219,12 +287,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378D64AD2183720100908138 /* ShredderViewController.xib in Resources */,
 				375D3019216D15D800D5B953 /* LaunchScreen.storyboard in Resources */,
 				37E47A5821767F5F00C7E693 /* ARViewController.xib in Resources */,
 				37A069A22172F1F40083873F /* Localizable.strings in Resources */,
 				375D3016216D15D800D5B953 /* Assets.xcassets in Resources */,
-				375D3014216D15D700D5B953 /* Main.storyboard in Resources */,
 				37BB0CD52173142700C175EB /* InfoPlist.strings in Resources */,
+				378D64B02183741500908138 /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,33 +347,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D45B1221B450CE00B531C9 /* DispatchQueue.extension.swift in Sources */,
 				37E47A5621765E4400C7E693 /* ARShredderLayer.swift in Sources */,
 				3771D611216FCBF7003909BE /* SettingViewController.swift in Sources */,
-				375D3011216D15D700D5B953 /* ViewController.swift in Sources */,
+				37D45B0E21B43EE800B531C9 /* ScreenCaptureManager.swift in Sources */,
 				3715DEA821790B9500885E84 /* ARView.PrexComponents.swift in Sources */,
-				3771D60D216FC711003909BE /* Secret.swift in Sources */,
 				37E47A4E2175E5F700C7E693 /* ARViewController.swift in Sources */,
 				3771D609216FC61E003909BE /* AdMobConfig.swift in Sources */,
-				3715DEA62179096300885E84 /* ARViewDelegateProxy.swift in Sources */,
+				37135EC321B5946400A0B9AA /* ScreenToGIFManager.swift in Sources */,
+				37135EC121B592EB00A0B9AA /* GIFMaker.swift in Sources */,
+				3715DEA62179096300885E84 /* ARViewDelegateHandler.swift in Sources */,
 				37E47A5D2176EB1000C7E693 /* Additional.swift in Sources */,
 				37E47A5F2176EE7000C7E693 /* ARShredderNode.swift in Sources */,
+				378D64B92183829500908138 /* SettingView.PrexComponets.swift in Sources */,
 				37E47A5B2176EADB00C7E693 /* UIImage.extension.swift in Sources */,
+				378D64B3218378E900908138 /* Secret.swift in Sources */,
+				378D64B721837E0800908138 /* SettingPresenter.swift in Sources */,
+				378D64B521837AA400908138 /* LocalizedString.swift in Sources */,
+				378D64AB218371BD00908138 /* ShredderViewController.swift in Sources */,
 				375D300F216D15D700D5B953 /* AppDelegate.swift in Sources */,
+				37915EB121B994300067DBED /* ShredderViewDelegateHandler.swift in Sources */,
+				37D45B0C21B43CDA00B531C9 /* ScreenRecorder.swift in Sources */,
 				3715DEA42178FF8F00885E84 /* ARPresenter.swift in Sources */,
+				37915EAD21B982650067DBED /* ShredderPresenter.swift in Sources */,
+				37915EAF21B9827A0067DBED /* ShredderView.PrexComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		375D3012216D15D700D5B953 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				375D3013216D15D700D5B953 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		375D3017216D15D800D5B953 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -463,7 +535,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,7 +559,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ArtShredder/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

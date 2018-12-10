@@ -1,10 +1,14 @@
 <p align="center">
-<a href="https://itunes.apple.com/app/id1439126672?mt=8">
-  <img src="./Images/icon.png" width="320px" />
-</a>
+  <a href="https://itunes.apple.com/app/id1439126672?mt=8">
+    <img src="./Images/icon.png" width="320px" />
+  </a>
+</p>
+<p align="center">
   <b>
     <font size="6">ArtShredder</font>
   </b>
+</p>
+<p align="center">
   <a href="https://itunes.apple.com/app/id1439126672?mt=8">
     <img src="./Images/Download_on_the_App_Store_Badge.png" />
   </a>

@@ -8,7 +8,7 @@
 
 import ARKit
 import SceneKit
-import QuartzCore
+import TheAnimation
 
 final class ARShredderNode: SCNNode {
 
@@ -69,16 +69,16 @@ final class ARShredderNode: SCNNode {
     func startAnimation() {
         [shredderLayer.baseImageLayer, shredderLayer.shredImageLayer].forEach {
             $0.removeAnimation(forKey: Const.animationKey)
-            let animation = CABasicAnimation(keyPath: Const.animationKeyPath)
+            let animation = BasicAnimation(keyPath: .transformTranslationY)
             animation.duration = 5
             animation.beginTime = CACurrentMediaTime() + 2
             animation.fromValue = 0
             animation.toValue = -232
             animation.isRemovedOnCompletion = false
             animation.fillMode = .forwards
-            animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            animation.delegate = self
-            $0.add(animation, forKey: Const.animationKey)
+            animation.timingFunction = .easeInEaseOut
+            animation.animation.delegate = self
+            $0.add(animation.animation, forKey: Const.animationKey)
         }
     }
 

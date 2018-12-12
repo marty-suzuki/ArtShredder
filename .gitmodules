@@ -1,3 +1,6 @@
 [submodule "Carthage/Checkouts/Prex"]
 	path = Carthage/Checkouts/Prex
 	url = https://github.com/marty-suzuki/Prex.git
+[submodule "Carthage/Checkouts/TheAnimation"]
+	path = Carthage/Checkouts/TheAnimation
+	url = https://github.com/marty-suzuki/TheAnimation.git
